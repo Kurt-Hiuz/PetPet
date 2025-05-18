@@ -1,12 +1,12 @@
 {
   "name": "petpet",
   "private": true,
-  "homepage": "https://Kurt-Hiuz.github.io/PetPet/project/frontend/petpet/index.html",
+  "homepage": "https://Kurt-Hiuz.github.io/PetPet",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "gh-pages -d dist",
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
