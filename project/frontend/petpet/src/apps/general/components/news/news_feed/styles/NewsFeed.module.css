@@ -1,0 +1,12 @@
+.news_feed{
+    /* width: 900px; */
+    width: calc(100vw - 400px);
+    /* min-height: 2000px; */
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    margin-top: 40px;
+    padding-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

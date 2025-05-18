@@ -1,0 +1,9 @@
+.short_user_info{
+    width: calc(100vw - 400px);
+    height: 295px;
+    border-radius: 10px;
+    background-color: #BAE3AF;
+    overflow: hidden;
+    position: relative;
+    margin-top: 40px;
+}

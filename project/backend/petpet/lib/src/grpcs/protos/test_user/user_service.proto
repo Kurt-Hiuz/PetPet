@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+import "user.proto";
+
+service UserService {
+    rpc CreateUser(CreateUserRequest) returns (User);
+    rpc DeleteUser(DeleteUserRequest) returns (Empty);
+    rpc UpdateUser(UpdateUserRequest) returns (User);
+    rpc GetUser(GetUserRequest) returns (User);
+    rpc GetAllUsers(Empty) returns (GetAllUsersResponse);
+}

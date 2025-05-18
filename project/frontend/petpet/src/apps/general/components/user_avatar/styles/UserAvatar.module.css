@@ -1,0 +1,26 @@
+.avatar_frame {
+    height: var(--avatar_width);
+    width: var(--avatar_width);
+    border-radius: 50%;
+    border: 10px solid #FFC898;
+    background-color: #FFC898;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    float: left;
+    margin-left: 30px;
+    margin-top: 22px;
+    position: relative;
+    overflow: hidden;
+    z-index: 2;
+}
+
+.avatar {
+    height: auto;
+    width: 120%;
+    object-fit: cover;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(-20px, -35%);
+}
