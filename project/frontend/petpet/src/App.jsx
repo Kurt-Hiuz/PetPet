@@ -18,7 +18,7 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [data, setData] = useState([]);
 
-  console.log(data);
+  console.table(data);
 
   // Чтобы функция не пересоздавалась каждый раз - кешируем её
   const fetchData = useCallback(async () => {
