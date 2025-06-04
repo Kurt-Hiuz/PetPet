@@ -14,7 +14,6 @@ export default function Profile(){
                 {user_data.map(post_data => (
                         <Post key={post_data.id} post_data={post_data}/>
                 ))}
-                {/* <Post post_data={user_data[0]}/> */}
             </NewsFeed>
         </>
     );
