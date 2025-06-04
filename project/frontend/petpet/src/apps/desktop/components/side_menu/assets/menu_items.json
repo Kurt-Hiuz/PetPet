@@ -12,7 +12,7 @@
     {
         "name": "Магазин",
         "img_path": "icon/path",
-        "page_path": "/"
+        "page_path": "/store"
     },
     {
         "name": "Лента",

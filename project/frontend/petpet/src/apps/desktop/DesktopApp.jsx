@@ -7,6 +7,7 @@ import MainBlock from './components/main/MainBlock';
 import Profile from './pages/Pofile/Profile';
 import YMap from './pages/YMap/YMap';
 import InProcess from '../general/screens/in_process/InProcess';
+import Store from './pages/Store/Store';
 
 import { Routes, Route } from 'react-router-dom';
 
@@ -20,6 +21,7 @@ export default function DesktopApp(){
                     <Route path='/' element={<InProcess/>} />
                     <Route path='profile' element={<Profile/>} />
                     <Route path='ymap' element={<YMap/>} />
+                    <Route path='store' element={<Store/>} />
                 </Routes>
             </MainBlock>
         </div>
