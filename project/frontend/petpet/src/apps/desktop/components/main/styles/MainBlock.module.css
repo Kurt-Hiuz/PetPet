@@ -1,8 +1,0 @@
-.main_block{
-    width: calc(100vw - 360px);
-    min-height: calc(100vh - 80px);
-    position: relative;
-    left: 360px;
-    display: flex;
-    flex-direction: column;
-}

@@ -1,9 +1,0 @@
-.desktop{
-    background-color: #F9F3DF;
-    min-height: 100vh;
-    height: 100%;
-    width: 100vw;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-}
