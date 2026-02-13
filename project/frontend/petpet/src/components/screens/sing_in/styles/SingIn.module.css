@@ -1,0 +1,78 @@
+.sign_in_container{
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    color: #FFC898;
+}
+
+input[type="text"], input[type="password"], input[type="email"]{
+    width: 400px;
+    height: 30px;
+    background-color: #F9F3DF;
+    border-radius: 10px;
+    border: none;
+    padding: 0 5px;
+    margin-bottom: 10px;
+}
+
+.ckeckbox_container{
+    width: 400px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    text-align: left;
+}
+
+input[type="checkbox"]{
+    accent-color: #FFC898;
+    outline: 3px solid #FFC898;
+    border: none;
+}
+
+::placeholder{
+    color: #FFC898;
+}
+
+.funny_logo{
+    position: absolute;
+    top: 120px;
+    left: 520px;
+    display: block;
+    width: 400px;
+}
+
+.form{
+    width: 500px;
+    max-height: 335px;
+    min-height: 201px;
+    position: absolute;
+    top: 480px;
+    left: 470px;
+    border: 3px solid #FFC898;
+    border-radius: 10px;
+    display: block;
+    padding-bottom: 20px;
+}
+
+.hint{
+    position: absolute;
+    bottom: 160px;
+    left: 528px;
+    text-decoration: underline;
+}
+
+.title{
+    font-weight: 400;
+}
+
+.submit_btn{
+    width: 270px;
+    height: 30px;
+    background-color: #83E474;
+    border-radius: 10px;
+    border: none;
+    position: relative;
+    top: 6px;
+    color: white;
+}

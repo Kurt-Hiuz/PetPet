@@ -1,0 +1,20 @@
+.map_hot_buttons{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    position: absolute;
+    left: -111px;
+    bottom: 20px;
+    transform: translateX(-100%);
+}
+
+.buttons{
+    height: 40px;
+    border: 5px solid #FFC898;
+    border-radius: 15px;
+    font-size: 16px;
+    font-family: inherit;
+    padding: 5px;
+    width: fit-content;
+}

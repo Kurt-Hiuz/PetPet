@@ -1,0 +1,75 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    width: 100%;
+}
+
+.label {
+    font-size: 0.875rem;
+    color: #333;
+    margin-left: 2px;
+}
+
+.inputWrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    pointer-events: none; /* Иконка не мешает кликам */
+    font-size: 1.3em;
+    z-index: 1;
+}
+
+.iconLeft {
+    left: 12px;
+}
+
+.iconRight {
+    right: 12px;
+}
+
+.input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+.input.hasIconLeft {
+    padding-left: 40px;
+}
+
+.input.hasIconRight {
+    padding-right: 40px;
+}
+
+.input:focus {
+    border-color: #6c63ff;
+    box-shadow: 0 0 0 2px rgba(108, 99, 255, 0.2);
+}
+
+.input.error {
+    border-color: #e53935;
+}
+
+.input.error:focus {
+    border-color: #c62828;
+    box-shadow: 0 0 0 2px rgba(229, 57, 53, 0.2);
+}
+
+.errorMessage {
+    font-size: 0.8125rem;
+    color: #e53935;
+    margin-left: 2px;
+}

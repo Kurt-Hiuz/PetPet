@@ -1,0 +1,106 @@
+@import url('/src/assets/styles/variables.css');
+
+.userHeader {
+    background: white;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.userInfo {
+    display: grid;
+    grid-template-columns: auto 1fr; /* Левая колонка — аватарка, правая — 1fr */
+    gap: 16px;
+    align-items: start; /* Чтобы аватарка не тянулась по высоте */
+}
+
+/* Левая колонка — аватарка по вертикальному центру */
+.userAvatarWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+/* Правая колонка — три строки: имя, описание, питомцы */
+.userInfoRight {
+    display: grid;
+    grid-template-rows: auto 1fr auto; /* Притяжение питомцев к низу */
+    gap: 8px;
+    min-height: 120px;
+    height: 100%;
+}
+
+.userName {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #212121;
+}
+
+.userBio {
+    margin: 0;
+    font-size: 0.9375rem;
+    color: #666;
+    line-height: 1.4;
+    word-wrap: break-word;
+}
+
+/* Блок с питомцами — прижат к низу */
+.pets {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.petAvatar {
+    border: 2px solid #e0e0e0;
+    border-radius: 50%;
+}
+
+.moreButton,
+.addButton {
+    --btn-size: 58px;
+
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    font-size: 20px;
+    width: var(--btn-size);
+    height: var(--btn-size);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease;
+}
+
+.moreButton {
+    background-color: var(--color-primary);
+}
+
+.moreButton svg{
+    color: var(--color-secondary);
+}
+
+.addButton {
+    background-color: var(--color-secondary);
+}
+
+.addButton {
+    color: var(--color-primary);
+}
+
+.addButton svg {
+    fill: white;
+}
+
+.moreButton:hover,
+.addButton:hover {
+    transform: scale(1.1);
+}

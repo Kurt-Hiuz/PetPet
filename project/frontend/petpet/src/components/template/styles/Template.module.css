@@ -1,0 +1,28 @@
+@import url('/src/assets/styles/variables.css');
+
+.template_wrapper{
+    min-height: 100vh;
+    /* height: max-content; */
+    background-color: var(--color-bg);
+
+    display: flex;
+    flex-direction: column;
+    /* overflow-x: hidden; */
+}
+
+.template_content{
+    --margin: 30px;
+    margin-left: var(--margin);
+    margin-right: var(--margin);
+    margin-top: var(--margin);
+    /* width: calc(100vw - 2 * var(--margin));
+    min-height: 400px;
+    height: max-content;
+    display: flex;
+    justify-content: space-between;
+    position: relative; */
+    /* background-color: blue; */
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+}

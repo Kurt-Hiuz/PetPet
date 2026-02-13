@@ -1,0 +1,26 @@
+.avatar {
+    border-radius: 50%;
+    object-fit: cover;
+    display: inline-block;
+}
+
+:root{
+    --small-size: 64px;
+    --medium-size: 128px;
+    --large-size: 256px;
+}
+
+.small {
+    width: var(--small-size);
+    height: var(--small-size);
+}
+
+.medium {
+    width: var(--medium-size);
+    height: var(--medium-size);
+}
+
+.large {
+    width: var(--large-size);
+    height: var(--large-size);
+}

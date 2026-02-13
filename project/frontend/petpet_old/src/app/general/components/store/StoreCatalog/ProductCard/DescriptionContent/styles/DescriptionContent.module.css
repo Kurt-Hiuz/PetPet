@@ -1,0 +1,36 @@
+.description{
+    width: calc(100% - 40px);
+    margin: 0 auto;
+    margin-top: 10px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.description p{
+    font-size: 14px;
+}
+
+.cost{
+    font-size: 24px;
+    font-family: inherit;
+}
+
+.rating{
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+    font-size: 16px;
+}
+
+.star{
+    color: #FF6F08;
+    margin-right: 2px;
+}
+
+.rating span{
+    color:rgb(167, 170, 173);
+    font-size: 12px;
+    margin-left: 5px;
+}

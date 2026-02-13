@@ -1,0 +1,9 @@
+.main_content_wrapper{
+    flex: 1;
+    padding-left: 20px;
+    overflow-y: auto;
+    min-height: 100%;
+    position: relative;
+
+    /* background-color: brown; */
+}

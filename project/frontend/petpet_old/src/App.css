@@ -1,0 +1,11 @@
+@font-face {
+  font-family: "Main";
+  src: local("UnboundedMain"),
+    url("./assets/fonts/Unbounded/Unbounded-VariableFont_wght.ttf") format("truetype");
+}
+
+#root {
+  text-align: center;
+  font-family: "Main";
+  
+}

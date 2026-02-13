@@ -1,0 +1,47 @@
+[
+    {
+        "productImgPath": "/images/store_test/dog_food.png",
+        "productDescription" : {
+            "price": 3129,
+            "title": "Ownat Adult Grain Free Сухой корму беззерновой для взрослых собак, с ягненком, 3 кг",
+            "stars": 5,
+            "reviewCount": 5999
+        }
+    },
+    {
+        "productImgPath": "/images/store_test/sweater.png",
+        "productDescription" : {
+            "price": 999,
+            "title": "RURRI Свитер из шенилла для кошек и собак, XS, персиковый",
+            "stars": 5,
+            "reviewCount": 107
+        }
+    },
+    {
+        "productImgPath": "/images/store_test/aquarium.png",
+        "productDescription" : {
+            "price": 2574,
+            "title": "Naribo Аквариум-шар пластиковый с оборудованием для рыбки петушка A-100, 4 л.",
+            "stars": 5,
+            "reviewCount": 444
+        }
+    },
+    {
+        "productImgPath": "/images/store_test/drinking_bowl.png",
+        "productDescription" : {
+            "price": 159,
+            "title": "Triol Поилка для птиц 200 мл",
+            "stars": 4.5,
+            "reviewCount": 27
+        }
+    },
+    {
+        "productImgPath": "/images/store_test/bird_food.png",
+        "productDescription" : {
+            "price": 169,
+            "title": "RIO РИО Бисквиты для птиц с лесными ягодами 5х7 г",
+            "stars": 4.5,
+            "reviewCount": 23
+        }
+    }
+]

@@ -1,0 +1,45 @@
+@import url('/src/assets/styles/variables.css');
+
+.button:focus-visible { /* Для скрин-ридера */
+    outline: 2px solid #6c63ff;
+    outline-offset: 2px;
+}
+
+.primary {
+    background-color: var(--color-primary);
+    color: var(--color-text);
+}
+
+.secondary {
+    background-color: var(--color-secondary);
+    color: #fff;
+}
+
+.small {
+    font-size: 0.875rem;
+    padding: 8px 12px;
+    min-height: 32px;
+    gap: 6px;
+}
+
+.medium {
+    font-size: 1.2rem;
+    padding: 10px 16px;
+    min-height: 40px;
+}
+
+.large {
+    font-size: 1.5rem;
+    padding: 12px 20px;
+    min-height: 48px;
+    gap: 10px;
+}
+
+.full_size {
+    width: 100%;
+}
+
+.disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}

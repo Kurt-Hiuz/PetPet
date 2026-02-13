@@ -1,0 +1,23 @@
+@import url(./ButtonsVariants.module.css);
+
+.button{
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-family: inherit;
+    border-radius: 8px;
+    transition: background-color 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px; /* Пространство между иконкой и текстом */
+    position: relative;
+    min-height: 40px;
+    padding: 10px 16px;
+}
+
+.icon {
+    display: flex;
+    align-items: center;
+    font-size: 1.1em; /* Иконка чуть больше текста */
+}

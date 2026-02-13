@@ -1,0 +1,42 @@
+.iconButton {
+    width: 36px;
+    height: 36px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    transition: background-color 0.2s ease;
+    padding: 0;
+}
+
+.iconButton:hover:not(:disabled) {
+    background-color: #f0f0f0;
+}
+
+.iconButton:active {
+    transform: scale(0.95);
+}
+
+.iconButton:focus-visible {
+    outline: 2px solid #6c63ff;
+    outline-offset: 2px;
+}
+
+/* Варианты */
+.default {
+    color: #555;
+}
+
+.danger {
+    color: #e53935;
+}
+
+/* Отключено */
+.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}   

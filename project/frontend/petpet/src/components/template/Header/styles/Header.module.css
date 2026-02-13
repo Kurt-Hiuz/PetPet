@@ -1,0 +1,7 @@
+@import url('/src/assets/styles/variables.css');
+
+.header{
+    height: 80px;
+    width: 100%;
+    background-color: var(--color-secondary);
+}
