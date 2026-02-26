@@ -1,20 +1,23 @@
 import classes from './styles/SideBar.module.css'
 
-import menu_items from '../../../data/menu_items.json' with { type: "json" };
+import { routesConfig } from '../../../config/routesConfig';
 
 import { Link } from 'react-router-dom';
 
 export default function SideMenu(){
+    const menu_items = routesConfig.filter(item => item.inMenu);
+
     return (
         <nav className={classes.nav_menu}>
             <div className={classes.nav_ul}>
-                {menu_items.map((list_item) => (
+                {menu_items.map((menu_item) => (
                     <Link
-                        to={list_item.page_path || '/not-found'} 
+                        to={menu_item.path || '/not-found'} 
                         className={classes.nav_li} 
-                        key={list_item.name}
+                        key={menu_item.path}
                     >
-                        {list_item.name}
+                        {/* <Icon icon={menu_item.icon} /> */}
+                        {menu_item.name}
                     </Link>
                 ))}
             </div>
