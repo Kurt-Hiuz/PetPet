@@ -4,13 +4,6 @@ export default [
     {
         path: '/',
         element: <InProcess />,
-        name: 'Лента',
-        inMenu: true,
-        icon: 'home',
-    },
-    {
-        path: '/',
-        element: <InProcess />,
         name: 'Скидочные карты',
         inMenu: true,
         icon: '',
