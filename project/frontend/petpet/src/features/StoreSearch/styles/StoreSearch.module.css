@@ -9,13 +9,23 @@
 
 .buttons {
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
+    align-items: center;
+    gap: 12px;
     width: 100%;
+}
+
+.buttons > button:last-child {
+    margin-left: auto;
 }
 
 @media (max-width: 480px) {
     .buttons {
         flex-direction: column;
         gap: 8px;
+    }
+    .buttons > button:last-child {
+        margin-left: 0;
+        width: 100%; /* Опционально: растягиваем на всю ширину */
     }
 }

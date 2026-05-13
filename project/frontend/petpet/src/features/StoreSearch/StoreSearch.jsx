@@ -4,7 +4,7 @@ import Button from '../../components/ui/Button/Button';
 import Icon from '../../components/ui/Icon/Icon';
 import Input from '../../components/ui/Input/Input';
 
-import { faArrowsUpDown, faFilter, faSearch } from '@fortawesome/free-solid-svg-icons';
+import { faArrowsUpDown, faFilter, faHeart, faSearch } from '@fortawesome/free-solid-svg-icons';
 
 export default function StoreSearch(){
     return(
@@ -18,7 +18,9 @@ export default function StoreSearch(){
                 </Button>
                 <Button variant='secondary'>
                     <Icon icon={faFilter}/>
-                    Фильтры
+                </Button>
+                <Button variant='secondary'>
+                    <Icon icon={faHeart}/>
                 </Button>
             </div>
         </div>
