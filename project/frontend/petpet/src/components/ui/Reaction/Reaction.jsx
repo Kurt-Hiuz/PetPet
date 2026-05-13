@@ -1,6 +1,8 @@
 import classes from './styles/Reaction.module.css';
 
-export default function Reaction({reactionImg = "/images/no-img.png", reactionCount = 0}){
+import { IMAGES } from '../../../config/assetsConfig';
+
+export default function Reaction({reactionImg = IMAGES.NO_IMG, reactionCount = 0}){
     return(
         <div className={classes.reaction}>
             <img src={reactionImg}/>
