@@ -1,5 +1,7 @@
 import classes from './styles/ProductCard.module.css';
 
+import { IMAGES, DETAILS } from '../../../config/assetsConfig';
+
 import ProductCardImage from './ProductCardImage/ProductCardImage';
 import ProductCardDescription from './ProductCardDescription/ProductCardDescription';
 
@@ -10,11 +12,10 @@ import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
 
 export default function ProductCard({data = {}}){
     const product = {
-        // TODO: сделать "/images/no-img.png"
-        "productImgPath": data.productImgPath ?? "/images/no-img.png",
+        "productImgPath": data.productImgPath ?? IMAGES.NO_IMG,
         "productDescription" : {
             "price": data.productDescription?.price ?? -1,
-            "title": data.productDescription?.title ?? "Пустое описание",
+            "title": data.productDescription?.title ?? DETAILS.NO_DESCRIPTION,
             "stars": data.productDescription?.stars ?? -1,
             "reviewCount": data.productDescription?.reviewCount ?? -1
         }
