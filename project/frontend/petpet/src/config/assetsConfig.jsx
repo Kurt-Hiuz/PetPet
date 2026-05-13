@@ -9,7 +9,10 @@ export const IMAGES = {
 };
 
 export const DETAILS = {
-    NO_DESCRIPTION: 'Пустое описание'
+    NO_DESCRIPTION: 'Пустое описание',
+    NO_PRICE: -1,
+    NO_STARS: -1,
+    NO_REVIEW: -1
 }
 
 // export const ICONS = {

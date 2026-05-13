@@ -14,10 +14,10 @@ export default function ProductCard({data = {}}){
     const product = {
         "productImgPath": data.productImgPath ?? IMAGES.NO_IMG,
         "productDescription" : {
-            "price": data.productDescription?.price ?? -1,
+            "price": data.productDescription?.price ?? DETAILS.NO_PRICE,
             "title": data.productDescription?.title ?? DETAILS.NO_DESCRIPTION,
-            "stars": data.productDescription?.stars ?? -1,
-            "reviewCount": data.productDescription?.reviewCount ?? -1
+            "stars": data.productDescription?.stars ?? DETAILS.NO_STARS,
+            "reviewCount": data.productDescription?.reviewCount ?? DETAILS.NO_REVIEW
         }
     }
     
