@@ -2,6 +2,8 @@ import classes from './styles/ProductCardGrid.module.css';
 
 import ProductCard from '../ProductCard/ProductCard';
 
+// ! TODO: разбить этот компонент на service и use составляющие
+
 export default function ProductCardGrid({isLoading = true, products}){
     if(isLoading){
         return <div className={classes.info}>Загрузка товаров...</div>
