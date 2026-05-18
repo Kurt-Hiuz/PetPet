@@ -1,0 +1,18 @@
+.feed {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Отступ между постами */
+    width: 100%;
+    max-width: 750px; /* Ограничение ширины для читаемости */
+    margin: 0 auto;   /* Центрирование ленты на странице */
+    padding: 16px;    /* Внутренний отступ, чтобы посты не прилипали к краям */
+    box-sizing: border-box;
+}
+
+/* Адаптивность: на мобильных чуть меньше отступы */
+@media (max-width: 480px) {
+    .feed {
+        gap: 16px;
+        padding: 12px;
+    }
+}

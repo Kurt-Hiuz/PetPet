@@ -1,3 +1,29 @@
-.post_header{
-    color: blue;
+.header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-bottom: 8px;
+}
+
+.info {
+    display: flex;
+    align-items: baseline; /* Выравнивание по базовой линии текста */
+    gap: 4px;
+    flex-wrap: wrap;
+}
+
+.userName,
+.petName {
+    font-size: 1.05rem; /* Чуть больше стандарта */
+    font-weight: 600;
+    color: var(--color-text, #111);
+    line-height: 1.2;
+}
+
+.separator {
+    font-size: 0.8rem; /* Меньше имён */
+    color: var(--color-text-secondary, #888);
+    font-weight: 400;
+    margin: 0 2px;
+    opacity: 0.7; /* Лёгкая прозрачность для декоративности */
 }

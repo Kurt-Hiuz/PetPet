@@ -1,0 +1,23 @@
+.footer {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 6px;
+}
+
+.date {
+    font-size: 0.78rem; /* Меньше */
+    color: var(--color-text-muted, #888);
+    letter-spacing: 0.02em;
+}
+
+.ownBadge {
+    font-size: 0.7rem; /* Ещё меньше */
+    color: var(--color-accent, #4a90e2);
+    background: var(--color-accent-light, #e8f0fe);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}

@@ -1,0 +1,100 @@
+/* PostActions.module.css */
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 12px;
+  border-top: 1px solid var(--color-primary-hover); /* Разделитель из темы */
+  width: 100%;
+}
+
+/*  Базовый стиль для ВСЕХ кнопок */
+.actionBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  
+  border: none; /* ✅ Рамки убраны */
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: 500;
+  line-height: 1.2;
+  
+  /* 🎨 Цвета из глобальных переменных */
+  background: transparent;
+  color: var(--color-text);
+}
+
+/* 🟡 Состояние при наведении */
+.actionBtn:hover {
+  background: var(--color-primary);
+  color: var(--color-secondary);
+}
+
+/* 🔴 Активное состояние (например, лайкнутый пост) */
+.actionBtn.active {
+  background: var(--color-primary-hover);
+  color: var(--color-secondary);
+}
+
+.actionBtn:active, .commentBtn:active, .repostBtn:active {
+  transform: scale(0.97);
+}
+
+/* Верхний ряд (реакции) */
+.reactionsRow {
+  display: flex;
+  gap: 8px;
+}
+
+.reactionsRow .actionBtn {
+  padding: 12px 18px; /* Стандартный размер для реакций */
+  font-size: 1rem;
+}
+
+/* Нижний ряд (комментарии + репост) */
+.secondaryActions {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+  align-items: center;
+}
+
+.commentBtn, .repostBtn{
+    border-radius: var(--border-radius);
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-weight: 500;
+    line-height: 1.2;
+    background: var(--color-primary);
+    color: var(--color-text);
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.commentBtn:hover, .commentBtn.active, .repostBtn:hover, .repostBtn.active{
+    background: var(--color-primary-hover);
+    color: var(--color-secondary);
+}
+
+/* 💬 Кнопка комментариев - чуть меньше по высоте */
+.commentBtn {
+  padding: 10px 16px; /* ✅ Уменьшен вертикальный отступ */
+  font-size: 0.95rem;
+  flex: 1;
+  max-width: 260px; /* Ограничиваем, чтобы не растягивалась на всю строку */
+}
+
+/* 🔁 Кнопка репоста - узкая, только иконка + число */
+.repostBtn {
+  padding: 10px 8px; /* ✅ Минимальные горизонтальные отступы */
+  min-width: auto;   /* ✅ Убрали принудительную ширину */
+  width: auto;
+  font-size: 0.95rem;
+  gap: 4px;          /* ✅ Минимальный зазор между иконкой и числом */
+}
