@@ -1,7 +1,8 @@
 const BASE_PATH = import.meta.env.BASE_URL || '/';
 
 export const IMAGES = {
-    NO_IMG: `${BASE_PATH}images/no-img.png`
+    NO_IMG: `${BASE_PATH}images/no-img.png`,
+    NO_ALT: 'Пустое описание картинки',
     // NO_AVATAR: `${BASE_PATH}images/no-avatar.png`,
     // LOGO: `${BASE_PATH}images/logo.svg`,
     // EMPTY_STATE: `${BASE_PATH}images/empty-state.svg`,
@@ -12,7 +13,7 @@ export const DETAILS = {
     NO_DESCRIPTION: 'Пустое описание',
     NO_PRICE: -1,
     NO_STARS: -1,
-    NO_REVIEW: -1
+    NO_REVIEW: -1,
 }
 
 // export const ICONS = {
