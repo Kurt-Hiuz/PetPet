@@ -1,0 +1,65 @@
+[
+    {
+        "id": "post_001",
+        "author": {
+            "avatar": "/images/user_profile_test/user-avatar.jpg",
+            "userName": "His Majesty",
+            "petName": "Котлетка"
+        },
+        "media": [
+                    {
+                        "type": "image",
+                        "url": "images/posts_test/cat.jpg",
+                        "alt": "Котлетка"
+                    },
+                    {
+                        "type": "image",
+                        "url": "images/posts_test/cat.jpg",
+                        "alt": "Котлетка"
+                    }
+        ],
+        "caption": "Моя Котлетка вышла погулять!",
+        "stats": {
+            "likes": 456,
+            "hearts": 15,
+            "comments": 21348,
+            "reposts": 2
+        },
+        "createdAt": "2024-05-19T10:30:00Z",
+        "isOwn": true
+    },
+    {
+        "id": "post_002",
+        "author": {
+            "avatar": "/images/user_profile_test/user-avatar.jpg",
+            "userName": "His Majesty",
+            "petName": "Табурет"
+        },
+        "media": [
+            {
+                "type": "image",
+                "url": "images/posts_test/dog.jpg",
+                "alt": "Табурет спит"
+            },
+            {
+                "type": "image",
+                "url": "images/posts_test/dog.jpg",
+                "alt": "Табурет спит"
+            },
+            {
+                "type": "image",
+                "url": "images/posts_test/dog.jpg",
+                "alt": "Табурет спит"
+            }
+        ],
+        "caption": "",
+        "stats": {
+            "likes": 128,
+            "hearts": 8149,
+            "comments": 24,
+            "reposts": 12
+        },
+        "createdAt": "2024-05-18T18:15:00Z",
+        "isOwn": true
+    }
+]
