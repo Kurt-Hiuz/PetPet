@@ -1,7 +1,9 @@
-import classes from './styles/News.module.css';
+// import classes from './styles/News.module.css';
+
+import PostFeedContainer from '../../../features/PostFeedContainer/PostFeedContainer';
 
 export default function News(){
     return(
-        <p className={classes}>Новости</p>
+        <PostFeedContainer />
     );
 }
