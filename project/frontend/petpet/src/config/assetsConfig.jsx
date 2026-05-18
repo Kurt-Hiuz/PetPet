@@ -14,6 +14,7 @@ export const DETAILS = {
     NO_PRICE: -1,
     NO_STARS: -1,
     NO_REVIEW: -1,
+    NO_NAME: 'Пустое имя',
 }
 
 // export const ICONS = {
