@@ -1,0 +1,49 @@
+.button {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: none;
+    background: var(--color-secondary);
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.25s ease;
+    z-index: 950; /* Ниже модалок, но выше контента */
+    opacity: 0;
+    transform: translateY(10px) scale(0.9);
+    animation: fadeInUp 0.3s ease forwards;
+}
+
+.button:hover {
+    background: var(--color-primary-hover);
+    color: var(--color-secondary);
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.button:active {
+    transform: scale(0.95);
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Мобильная адаптация */
+@media (max-width: 480px) {
+    .button {
+        bottom: 16px;
+        right: 16px;
+        width: 44px;
+        height: 44px;
+    }
+}
