@@ -4,13 +4,15 @@ import Avatar from '../Avatar/Avatar';
 import Button from '../Button/Button';
 import Icon from '../Icon/Icon';
 
+import { IMAGES, DETAILS } from '../../../config/assetsConfig';
+
 import { faPlus, faAngleDoubleRight } from '@fortawesome/free-solid-svg-icons';
 
 export default function UserHeader({userData}) {
     const user = {
-        name: userData?.name ?? "Пустое имя пользователя",
-        bio: userData?.bio ?? "Пустое описание пользователя",
-        avatar: userData?.avatar ?? "/images/no-img.png",
+        name: userData?.name ?? DETAILS.NO_NAME,
+        bio: userData?.bio ?? DETAILS.NO_DESCRIPTION,
+        avatar: userData?.avatar ?? IMAGES.NO_IMG,
         pets : Array.isArray(userData?.pets) ? userData.pets : []
     }
 
