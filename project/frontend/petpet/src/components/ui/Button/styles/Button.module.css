@@ -1,11 +1,12 @@
 @import url(./ButtonsVariants.module.css);
 
 .button{
+    box-sizing: border-box;
     border: none;
     outline: none;
     cursor: pointer;
     font-family: inherit;
-    border-radius: 8px;
+    border-radius: var(--border-radius, 8px);
     transition: background-color 0.2s ease;
     display: inline-flex;
     align-items: center;
@@ -14,6 +15,7 @@
     position: relative;
     min-height: 40px;
     padding: 10px 16px;
+    transition: all 0.2s ease;
 }
 
 .icon {
