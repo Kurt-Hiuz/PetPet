@@ -78,7 +78,7 @@
 }
 
 .commentBtn:hover, .commentBtn.active, .repostBtn:hover, .repostBtn.active{
-    background: var(--color-primary-hover);
+    background: var(--color-primary);
     color: var(--color-secondary);
 }
 
