@@ -43,3 +43,25 @@
     opacity: 0.6;
     cursor: not-allowed;
 }
+
+.creation {
+    border: 1px dashed var(--color-border, #d0d0d0);
+    background: var(--color-bg, #fff);
+    color: var(--color-text-secondary, #666);
+    /* transition уже наследуется от .button, но можно уточнить */
+    transition-property: background-color, border-color, color, box-shadow, transform;
+}
+
+.creation:hover {
+    background: var(--color-primary, #f0f4f8);
+    border-color: var(--color-secondary, #648ccc);
+    color: var(--color-secondary, #648ccc);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Глубина без влияния на поток документа */
+    transform: translateY(-1px); /* Лёгкий "подъём" кнопки */
+}
+
+.creation:active {
+    transform: translateY(0) scale(0.98);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    transition-duration: 0.1s; /* Быстрая обратная связь при клике */
+}
