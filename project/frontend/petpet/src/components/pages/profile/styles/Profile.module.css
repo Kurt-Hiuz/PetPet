@@ -1,3 +1,15 @@
-.p{
-    color: red;
+.profileContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 680px; /* Совпадает с шириной ленты */
+    margin: 0 auto;
+    padding: 16px;
+}
+
+.emptyState {
+    text-align: center;
+    padding: 40px 20px;
+    color: var(--color-text-secondary, #888);
+    font-size: 1rem;
 }
