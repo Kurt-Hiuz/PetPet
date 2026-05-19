@@ -1,5 +1,7 @@
 import classes from './styles/Button.module.css';
 
+import clsx from 'clsx';
+
 export default function Button({
     children,
     icon,
@@ -13,19 +15,17 @@ export default function Button({
     classList = "",
     ...rest
 }){
-    const buttonsClasses = [
-        classes.button,
-        classes[variant],
-        classes[size],
-        fullWidth && classes.full_size,
-        (disabled || loading) && classes.disabled,
-        classList
-    ].filter(Boolean).join(" ");
     
     return (
         <button
             type={type}
-            className={buttonsClasses}
+            className={clsx(
+                classes.button,
+                classes[variant],
+                classes[size],
+                fullWidth && classes.full_size,
+                classList
+            )}
             onClick={OnClick}
             disabled={disabled || loading}
             {...rest}
