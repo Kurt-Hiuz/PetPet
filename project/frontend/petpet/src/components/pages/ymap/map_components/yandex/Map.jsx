@@ -34,7 +34,7 @@ export default function Map({ center = [55.751574, 37.573856], zoom = 10, apiKey
             window.ymapsLoading = true;
 
             const script = document.createElement('script');
-            script.src = `https://api-maps.yandex.ru/2.1/?apikey= ${encodeURIComponent(apiKey)}&lang=ru_RU`;
+            script.src = `https://api-maps.yandex.ru/2.1/?apikey=${encodeURIComponent(apiKey)}&lang=ru_RU`;
             script.async = true;
 
             script.onload = () => {
