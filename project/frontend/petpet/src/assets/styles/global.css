@@ -4,9 +4,15 @@
     box-sizing: border-box;
 }
 
-:root{
+@font-face {
     font-family: 'Unbounded';
     src: url('../fonts/Unbounded/Unbounded-VariableFont_wght.ttf') format('truetype');
+    font-weight: 100 900; /* для VariableFont — диапазон весов */
+    font-display: swap;   /* показывает fallback-шрифт, пока грузится */
+}
+
+:root{
+    font-family: 'Unbounded';
 }
 
 body {
