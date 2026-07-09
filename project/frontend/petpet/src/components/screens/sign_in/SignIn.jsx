@@ -1,6 +1,6 @@
 import FunnyFace from '../../../assets/components/logo/FunnyFace'
 
-import classes from './styles/SingIn.module.css'
+import classes from './styles/SignIn.module.css'
 
 export default function SingIn(){
 
