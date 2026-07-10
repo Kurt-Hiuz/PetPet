@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { usePetStore } from '../../shared/store/petStore';
-import { getPets } from '../../shared/api/petApi';
+import { getPets } from '../../shared/api/pet/petApi';
 
 export const PetContextProvider = ({ children }) => {
     const [searchParams, setSearchParams] = useSearchParams();

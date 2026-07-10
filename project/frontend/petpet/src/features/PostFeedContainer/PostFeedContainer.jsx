@@ -1,6 +1,6 @@
 import PostFeed from '../../components/ui/PostFeed/PostFeed';
 import { useFeed } from './hooks/useFeed';
-import { usePetContext } from '../../components/shared/hooks/usePetContext';
+import { usePetContext } from '../../shared/hooks/usePetContext';
 
 /**
  * Контейнер для ленты постов

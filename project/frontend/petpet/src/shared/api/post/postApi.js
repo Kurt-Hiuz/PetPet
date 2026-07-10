@@ -1,4 +1,4 @@
-import postData from '../../../../data/post_test_data.json';
+import postData from '../../../data/post_test_data.json';
 import { apiRequest, buildQueryString } from '../httpClient';
 
 /**

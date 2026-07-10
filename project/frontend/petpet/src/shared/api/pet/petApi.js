@@ -1,4 +1,4 @@
-import petsData from '../../../../data/pets_test_data.json';
+import petsData from '../../../data/pets_test_data.json';
 import { apiRequest, buildQueryString } from '../httpClient';
 
 /**
