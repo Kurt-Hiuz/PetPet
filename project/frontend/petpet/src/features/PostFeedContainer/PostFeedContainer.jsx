@@ -1,6 +1,6 @@
 import PostFeed from '../../components/ui/PostFeed/PostFeed';
 import { useFeed } from './hooks/useFeed';
-import { usePetContext } from '../../shared/hooks/usePetContext';
+import { usePetContext } from '../../components/shared/hooks/usePetContext';
 
 /**
  * Контейнер для ленты постов
@@ -8,7 +8,7 @@ import { usePetContext } from '../../shared/hooks/usePetContext';
  */
 export default function PostFeedContainer() {
     // Получаем activePetId из контекста
-    const { activePetId, isLoading: isPetLoading } = usePetContext();
+    const { activePetId, currentPet, isLoading: isPetLoading } = usePetContext();
 
     // Передаём в useFeed - он автоматически перезагрузит ленту при смене petId
     const { posts, loading, error, refetch } = useFeed({ petId: activePetId });
@@ -33,10 +33,15 @@ export default function PostFeedContainer() {
         );
     }
 
-    // Если нет питомца - показываем заглушку
-    if (!activePetId) {
-        return <div>Выберите питомца для просмотра ленты</div>;
-    }
+    // Формируем заголовок режима
+    const feedTitle = activePetId && currentPet
+        ? `Лента питомца ${currentPet.name}`
+        : 'Общая лента';
 
-    return <PostFeed posts={posts} />;
+    return(
+        <>
+            <h2>{feedTitle}</h2>
+            <PostFeed posts={posts} />
+        </>
+    );
 }

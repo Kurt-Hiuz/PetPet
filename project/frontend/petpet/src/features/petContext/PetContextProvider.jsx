@@ -49,23 +49,19 @@ export const PetContextProvider = ({ children }) => {
                 isUpdatingFromUrl.current = true;
                 setActivePetId(urlPetId);
             } else if (!petExists) {
-                // Невалидный petId - редирект на дефолтного
-                const defaultPetId = pets[0]?.id;
-                if (defaultPetId) {
-                    setSearchParams({ petId: defaultPetId }, { replace: true });
-                    setActivePetId(defaultPetId);
-                    // TODO: Показать toast "Питомец не найден"
-                }
+                // Невалидный petId - сбрасываем на "общую ленту"
+                setSearchParams({}, { replace: true }); // убираем petId из URL
+                setActivePetId(null);
+                // TODO: Показать toast "Питомец не найден, показана общая лента"
             }
         } else {
-            // Нет petId в URL - устанавливаем дефолтного
-            const defaultPetId = pets[0]?.id;
-            if (defaultPetId) {
-                setSearchParams({ petId: defaultPetId }, { replace: true });
-                setActivePetId(defaultPetId);
+            // Нет petId в URL - оставляем null (общая лента)
+            // НЕ устанавливаем дефолтного питомца автоматически
+            if (activePetId !== null) {
+                setActivePetId(null);
             }
         }
-    }, [searchParams, pets]); // eslint-disable-line react-hooks/exhaustive-deps
+    }, [searchParams, pets, activePetId, setActivePetId, setSearchParams]);
 
     // Синхронизация Zustand и URL
     useEffect(() => {
@@ -74,13 +70,20 @@ export const PetContextProvider = ({ children }) => {
             return;
         }
 
+        const urlPetId = searchParams.get('petId');
+
         if (activePetId) {
-            const urlPetId = searchParams.get('petId');
+            // Выбран конкретный питомец - записываем в URL
             if (urlPetId !== activePetId) {
-              setSearchParams({ petId: activePetId }, { replace: false }); // push для истории браузера
+                setSearchParams({ petId: activePetId }, { replace: false });
+            }
+        } else {
+            // Общая лента - убираем petId из URL
+            if (urlPetId) {
+                setSearchParams({}, { replace: false });
             }
         }
-    }, [activePetId]); // eslint-disable-line react-hooks/exhaustive-deps
+    }, [activePetId, searchParams, setSearchParams]);
 
     return children;
 };
