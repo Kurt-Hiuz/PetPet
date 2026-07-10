@@ -1,5 +1,7 @@
 import classes from './styles/Template.module.css'
 
+import { PetContextProvider } from '../../features/petContext/PetContextProvider';
+
 import Header from './Header/Header'
 import SideMenu from './SideBar/SideBar';
 import MainContent from './MainContent/MainContent';
@@ -11,13 +13,15 @@ export default function Template(){
     const scrollRef = useRef(null);
 
     return(
-        <div className={classes.template_wrapper}>
-            <Header/>
-            <div className={classes.template_content}>
-                <SideMenu/>
-                <MainContent/>
+        <PetContextProvider>
+            <div className={classes.template_wrapper}>
+                <Header/>
+                <div className={classes.template_content}>
+                    <SideMenu/>
+                    <MainContent/>
+                </div>
+                <ScrollToTop scrollContainerRef={scrollRef} threshold={400} />
             </div>
-            <ScrollToTop scrollContainerRef={scrollRef} threshold={400} />
-        </div>
+        </PetContextProvider>
     );
 }
