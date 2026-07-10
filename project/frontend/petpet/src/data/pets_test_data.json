@@ -1,0 +1,29 @@
+[
+    {
+        "id": "pet_3",
+        "name": "Табурет",
+        "type": "dog",
+        "breed": "Корги",
+        "age": 3,
+        "avatar": "/images/user_profile_test/pet3.png",
+        "ownerId": "user_1"
+    },
+    {
+        "id": "pet_1",
+        "name": "Котлетка",
+        "type": "cat",
+        "breed": "Британская",
+        "age": 5,
+        "avatar": "/images/user_profile_test/pet1.png",
+        "ownerId": "user_1"
+    },
+    {
+        "id": "pet_2",
+        "name": "Хома",
+        "type": "hamster",
+        "breed": "Крутой хомяк",
+        "age": 2,
+        "avatar": "/images/user_profile_test/pet2.png",
+        "ownerId": "user_1"
+    }
+]
