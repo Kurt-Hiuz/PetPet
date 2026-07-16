@@ -15,10 +15,11 @@ export default function Profile(){
         bio: "Мамочка трёх ангелочков Меня сложно найти, легко потерять и невозможно забыть Великолепнейший мужчина этого мира",
         avatar: "/images/user_profile_test/user-avatar.jpg",
         pets: [
-            { id: 1, name: "Барсик", avatar: "/images/user_profile_test/pet1.png" },
-            { id: 2, name: "Люся", avatar: "/images/user_profile_test/pet2.png" },
-            { id: 3, name: "Тимоша", avatar: "/images/user_profile_test/pet3.png" },
-            { id: 4, name: "Антоша", avatar: "/images/user_profile_test/pet4.png" }
+            { id: 1, name: "Котлетка", avatar: "/images/user_profile_test/pet1.png" },
+            { id: 2, name: "Дима Б. Пикми", avatar: "/images/user_profile_test/pet2.png" },
+            { id: 3, name: "Табурет", avatar: "/images/user_profile_test/pet3.png" },
+            { id: 4, name: "Антоша", avatar: "/images/user_profile_test/pet4.png" },
+            { id: 5, name: "Ксюша", avatar: "/images/user_profile_test/pet5.png" }
         ],
     };
 
