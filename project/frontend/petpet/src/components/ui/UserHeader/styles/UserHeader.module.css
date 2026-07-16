@@ -12,12 +12,11 @@
 
 .userInfo {
     display: grid;
-    grid-template-columns: auto 1fr; /* Левая колонка — аватарка, правая — 1fr */
+    grid-template-columns: auto 1fr;
     gap: 16px;
-    align-items: start; /* Чтобы аватарка не тянулась по высоте */
+    align-items: start;
 }
 
-/* Левая колонка — аватарка по вертикальному центру */
 .userAvatarWrapper {
     display: flex;
     align-items: center;
@@ -25,10 +24,9 @@
     height: 100%;
 }
 
-/* Правая колонка — три строки: имя, описание, питомцы */
 .userInfoRight {
     display: grid;
-    grid-template-rows: auto 1fr auto; /* Притяжение питомцев к низу */
+    grid-template-rows: auto 1fr auto;
     gap: 8px;
     min-height: 120px;
     height: 100%;
@@ -49,24 +47,16 @@
     word-wrap: break-word;
 }
 
-/* Блок с питомцами — прижат к низу */
 .pets {
     display: flex;
     align-items: center;
     gap: 12px;
-    flex-wrap: wrap;
 }
 
-.petAvatar {
-    border: 2px solid #e0e0e0;
-    border-radius: 50%;
-}
-
-.moreButton,
 .addButton {
     --btn-size: 58px;
-
-    background: none;
+    background-color: var(--color-secondary);
+    color: var(--color-primary);
     border: none;
     cursor: pointer;
     padding: 0;
@@ -77,30 +67,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: background-color 0.2s ease;
-}
-
-.moreButton {
-    background-color: var(--color-primary);
-}
-
-.moreButton svg{
-    color: var(--color-secondary);
-}
-
-.addButton {
-    background-color: var(--color-secondary);
-}
-
-.addButton {
-    color: var(--color-primary);
+    transition: transform 0.2s ease;
+    flex-shrink: 0;
 }
 
 .addButton svg {
     fill: white;
 }
 
-.moreButton:hover,
 .addButton:hover {
     transform: scale(1.1);
 }

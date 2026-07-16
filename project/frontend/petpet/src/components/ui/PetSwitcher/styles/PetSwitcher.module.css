@@ -1,0 +1,110 @@
+@import url('/src/assets/styles/variables.css');
+@import url('/src/components/ui/Avatar/styles/Avatar.module.css');
+
+.petSwitcher {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.petsList {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.petsList.scrollable {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    /* Ширина = visibleCount * (размер аватарки + gap) - последний gap
+       Используем CSS-переменную из Avatar.module.css */
+    max-width: calc(var(--visible-count) * (var(--medium-size) + 12px) - 12px);
+}
+
+.petsList.scrollable::-webkit-scrollbar {
+    display: none;
+}
+
+.petItem {
+    flex-shrink: 0;
+    scroll-snap-align: start;
+    position: relative;
+    /* Передаём ширину элемента в JS через CSS-переменную */
+    /* --pet-item-width: var(--medium-size); */
+}
+
+.petAvatar {
+    border: 2px solid #e0e0e0;
+    border-radius: 50%;
+}
+
+/* Счётчик скрытых питомцев */
+.hiddenCount {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    background-color: var(--color-secondary);
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.65rem;
+    font-weight: 600;
+    border: 2px solid var(--color-primary);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    pointer-events: none;
+    z-index: 10;
+}
+
+.arrowButton {
+    --arrow-size: 40px;
+    flex-shrink: 0;
+    width: var(--arrow-size);
+    height: var(--arrow-size);
+    border: none;
+    border-radius: 50%;
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    font-size: 16px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    position: relative;
+}
+
+.arrowButton.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Левая стрелка: сдвигается влево когда скрыта */
+.arrowButton.hidden:first-of-type {
+    transform: translateX(-15px);
+}
+
+/* Правая стрелка: сдвигается вправо когда скрыта */
+.arrowButton.hidden:last-of-type {
+    transform: translateX(15px);
+}
+
+.arrowButton:hover:not(.hidden) {
+    transform: scale(1.1);
+}
+
+.arrowButton:disabled {
+    cursor: default;
+}
+
+.arrowLeft .hiddenCount {
+    right: auto;
+    left: -4px;
+}
