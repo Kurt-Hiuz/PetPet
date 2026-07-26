@@ -1,0 +1,57 @@
+.overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 16px;
+    animation: fadeIn 0.2s ease-out;
+}
+
+.modal {
+    background-color: var(--color-surface, #fff);
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    animation: slideUp 0.25s ease-out;
+
+    /* Базовые min/max — карточка растягивается под содержимое */
+    min-width: 320px;
+    max-width: 100%;
+    min-height: 120px;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+/* Размерные пресеты через width, а не min/max —
+   так карточка растягивается по высоте под контент */
+.small  { width: 400px; }
+.medium { width: 520px; }
+.wide { width: 640px; }
+.large  { width: 720px; }
+.auto   { width: auto; }  /* полностью по содержимому */
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 480px) {
+    .modal {
+        width: 100% !important;
+        min-width: 0;
+        border-radius: 12px;
+    }
+}
