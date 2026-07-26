@@ -1,0 +1,247 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 24px;
+    overflow: hidden; /* Защита от горизонтального скролла */
+    box-sizing: border-box;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.title {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--color-text);
+    line-height: 1.3;
+}
+
+.authorInfo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.authorName {
+    font-size: 14px;
+    color: var(--color-text-secondary, #6b7280);
+}
+
+.authorFieldset {
+    margin: 0;
+    padding: 0;
+    border: none;
+    /* Ключевое: сбрасываем min-width, из-за которого fieldset не сжимается */
+    min-width: 0;
+    inline-size: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    box-sizing: border-box;
+}
+
+.legend {
+    margin: 0;
+    padding: 0;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--color-text-secondary, #6b7280);
+}
+
+/* Группа поля (label + input) */
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.labelRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+}
+
+.label {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--color-text-secondary, #6b7280);
+}
+
+.charCount {
+  font-size: 12px;
+  color: var(--color-text-secondary, #9ca3af);
+  font-variant-numeric: tabular-nums;
+}
+
+.charCountWarning {
+    color: #f59e0b;
+    font-weight: 500;
+}
+
+.textarea {
+    width: 100%;
+    min-height: 100px;
+    padding: 12px 14px;
+    border: 1px solid var(--color-border, #e5e7eb);
+    border-radius: 10px;
+    background-color: var(--color-surface, #fff);
+    color: var(--color-text);
+    font-family: inherit;
+    font-size: 14px;
+    line-height: 1.5;
+    resize: vertical;
+    box-sizing: border-box;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.textarea::placeholder {
+    color: var(--color-text-secondary, #9ca3af);
+}
+
+.textarea:focus {
+    outline: none;
+    border-color: var(--color-secondary);
+    box-shadow: 0 0 0 3px rgba(100, 140, 204, 0.15);
+}
+
+/* Disabled-состояние — приглушённое */
+.textarea:disabled {
+    background-color: var(--color-primary, #f3f4f6);
+    color: var(--color-text-secondary, #9ca3af);
+    cursor: not-allowed;
+}
+
+.mediaZone {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 24px 16px;
+    background-color: var(--color-surface, #fff);
+    border: 2px dashed var(--color-border, #e5e7eb);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: border-color 0.15s ease, background-color 0.15s ease;
+    font-family: inherit;
+    color: inherit;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.mediaZone:hover:not(:disabled) {
+    border-color: var(--color-secondary);
+    background-color: var(--color-primary, #f9fafb);
+}
+
+.mediaZone:focus-visible {
+    outline: 2px solid var(--color-secondary);
+    outline-offset: 2px;
+}
+
+.mediaZone:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.mediaZoneDragging {
+    border-color: var(--color-secondary);
+    background-color: var(--color-primary, #e0f2fe);
+}
+
+.fileInput {
+    display: none;
+}
+
+.mediaIcons {
+    display: flex;
+    gap: 12px;
+}
+
+.mediaIcon {
+    font-size: 20px;
+    color: var(--color-text-secondary, #9ca3af);
+}
+
+.mediaText {
+    font-size: 13px;
+    color: var(--color-text-secondary, #6b7280);
+    text-align: center;
+}
+
+.mediaPreview {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.mediaItem {
+    position: relative;
+    aspect-ratio: 1;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: var(--color-primary, #f3f4f6);
+}
+
+.mediaThumb {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.mediaRemove {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.15s ease;
+    font-size: 12px;
+}
+
+.mediaRemove:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.footer {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    padding-top: 8px;
+    border-top: 1px solid var(--color-border, #e5e7eb);
+}
+
+@media (max-width: 480px) {
+    .form {
+        padding: 16px;
+        gap: 16px;
+    }
+
+    .title {
+        font-size: 18px;
+    }
+
+    .footer {
+        flex-direction: column-reverse;
+    }
+
+    .footer button {
+        width: 100%;
+    }
+}
