@@ -25,5 +25,23 @@
         "age": 2,
         "avatar": "/images/user_profile_test/pet2.png",
         "ownerId": "user_1"
+    },
+    { 
+        "id": "pet_4", 
+        "name": "Антоша",
+        "type": "parrot",
+        "breed": "Пиратский папуг",
+        "age": 2, 
+        "avatar": "/images/user_profile_test/pet4.png",
+        "ownerId": "user_1" 
+    },
+    { 
+        "id": "pet_5", 
+        "name": "Ксюша", 
+        "type": "chinchilla",
+        "breed": "Комочек счастья",
+        "age": 2, 
+        "avatar": "/images/user_profile_test/pet5.png",
+        "ownerId": "user_1"
     }
 ]
