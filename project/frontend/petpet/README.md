@@ -17,8 +17,6 @@ petpet
 ├─ index.html
 ├─ package-lock.json
 ├─ package.json
-├─ project-structure.txt
-├─ project-structure2.txt
 ├─ public
 │  ├─ images
 │  │  ├─ no-img.png
@@ -36,6 +34,7 @@ petpet
 │  │     ├─ pet2.png
 │  │     ├─ pet3.png
 │  │     ├─ pet4.png
+│  │     ├─ pet5.png
 │  │     └─ user-avatar.jpg
 │  └─ vite.svg
 ├─ README.md
@@ -127,11 +126,10 @@ petpet
 │  │  │  │  ├─ LoadingScreen.jsx
 │  │  │  │  └─ styles
 │  │  │  │     └─ LoadingScreen.module.css
-│  │  │  └─ sing_in
-│  │  │     ├─ SingIn.jsx
+│  │  │  └─ sign_in
+│  │  │     ├─ SignIn.jsx
 │  │  │     └─ styles
-│  │  │        └─ SingIn.module.css
-│  │  ├─ shared
+│  │  │        └─ SignIn.module.css
 │  │  ├─ template
 │  │  │  ├─ Header
 │  │  │  │  ├─ Header.jsx
@@ -149,6 +147,10 @@ petpet
 │  │  │  │  └─ Template.module.css
 │  │  │  └─ Template.jsx
 │  │  └─ ui
+│  │     ├─ AuthorCard
+│  │     │  ├─ AuthorCard.jsx
+│  │     │  └─ styles
+│  │     │     └─ AuthorCard.module.css
 │  │     ├─ Avatar
 │  │     │  ├─ Avatar.jsx
 │  │     │  └─ styles
@@ -170,6 +172,20 @@ petpet
 │  │     │  ├─ Input.jsx
 │  │     │  └─ styles
 │  │     │     └─ Input.module.css
+│  │     ├─ ModalTrigger
+│  │     │  ├─ Modal
+│  │     │  │  ├─ Modal.jsx
+│  │     │  │  └─ styles
+│  │     │  │     └─ Modal.module.css
+│  │     │  └─ ModalTrigger.jsx
+│  │     ├─ PetCarousel
+│  │     │  ├─ PetCarousel.jsx
+│  │     │  └─ styles
+│  │     │     └─ PetCarousel.module.css
+│  │     ├─ PetSwitcher
+│  │     │  ├─ PetSwitcher.jsx
+│  │     │  └─ styles
+│  │     │     └─ PetSwitcher.module.css
 │  │     ├─ Post
 │  │     │  ├─ Post.jsx
 │  │     │  ├─ PostActions
@@ -233,23 +249,31 @@ petpet
 │  │        │  └─ UserHeader.module.css
 │  │        └─ UserHeader.jsx
 │  ├─ config
+│  │  ├─ apiConfig.js
 │  │  ├─ assetsConfig.jsx
 │  │  ├─ reactionsConfig.js
 │  │  ├─ routesConfig.jsx
 │  │  └─ themes.js
 │  ├─ data
 │  │  ├─ http_codes.json
+│  │  ├─ pets_test_data.json
 │  │  ├─ post_test_data.json
 │  │  └─ store_test_data.json
 │  ├─ features
+│  │  ├─ CreatePostModal
+│  │  │  ├─ CreatePostModal.jsx
+│  │  │  └─ styles
+│  │  │     └─ CreatePostModal.module.css
+│  │  ├─ petContext
+│  │  │  └─ PetContextProvider.jsx
 │  │  ├─ PostFeedContainer
+│  │  │  ├─ hooks
+│  │  │  │  └─ useFeed.js
 │  │  │  └─ PostFeedContainer.jsx
 │  │  └─ StoreSearch
 │  │     ├─ StoreSearch.jsx
 │  │     └─ styles
 │  │        └─ StoreSearch.module.css
-│  ├─ hooks
-│  │  └─ useFeed.js
 │  ├─ index.css
 │  ├─ main.jsx
 │  ├─ routes
@@ -260,9 +284,17 @@ petpet
 │  │     ├─ profileRoute.jsx
 │  │     ├─ storeRoute.jsx
 │  │     └─ ymapRoute.jsx
-│  ├─ services
-│  │  └─ postService.js
 │  ├─ shared
+│  │  ├─ api
+│  │  │  ├─ httpClient.js
+│  │  │  ├─ pet
+│  │  │  │  └─ petApi.js
+│  │  │  └─ post
+│  │  │     └─ postApi.js
+│  │  ├─ hooks
+│  │  │  └─ usePetContext.js
+│  │  └─ store
+│  │     └─ petStore.js
 │  └─ utils
 │     ├─ formatCount.js
 │     └─ pluralize.js
