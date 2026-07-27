@@ -5,6 +5,9 @@ import Button from '../../ui/Button/Button';
 import PostFeed from '../../ui/PostFeed/PostFeed';
 import Icon from '../../ui/Icon/Icon';
 
+import ModalTrigger from '../../ui/ModalTrigger/ModalTrigger';
+import CreatePostModal from '../../../features/CreatePostModal/CreatePostModal';
+
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
 export default function Profile(){
@@ -88,21 +91,18 @@ export default function Profile(){
         "isOwn": true
     }
 ]
-
-    const handleCreatePost = () => {
-        console.log('Открыть модалку создания поста');
-        // TODO: открыть модальное окно или перейти на /create-post
-    };
-
     return(
         <>
             <UserHeader userData={userData}/>
             <div className={classes.profileContainer}>
-                <Button variant="creation" fullWidth={true} onClick={handleCreatePost}>
-                    <Icon icon={faPlus} />
-                    <span>Что у вас нового?</span>
-                </Button>
-        
+
+                <ModalTrigger modal={<CreatePostModal />}>
+                    <Button variant="creation" fullWidth={true}>
+                        <Icon icon={faPlus} />
+                        <span>Что у вас нового?</span>
+                    </Button>
+                </ModalTrigger>
+
                 {userPosts.length > 0 ? (
                     <PostFeed posts={userPosts} />
                         ) : (
