@@ -1,0 +1,50 @@
+.authorCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    padding: 4px;
+    background: transparent;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.15s ease, border-color 0.15s ease;
+    /* Т.к. в настройках показывать 3 питомца - делим на 3 */
+    width: calc(100% / 3);
+    flex-shrink: 0;
+    box-sizing: border-box;
+    font-family: inherit;
+    color: inherit;
+}
+
+.authorCard:hover {
+    background-color: var(--color-primary, #f3f4f6);
+}
+
+.authorCardActive {
+    border-color: var(--color-secondary);
+    background-color: var(--color-primary, #f3f4f6);
+}
+
+.authorCard:focus-visible {
+    outline: 2px solid var(--color-secondary);
+    outline-offset: 2px;
+}
+
+.authorName {
+    font-size: 16.5px;
+    font-weight: 500;
+    color: var(--color-text);
+    max-width: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-align: center;
+}
+
+@media (max-width: 480px) {
+    .authorName {
+        font-size: 14px;
+        max-width: 64px;
+    }
+}
