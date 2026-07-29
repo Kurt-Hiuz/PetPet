@@ -5,6 +5,7 @@ import Icon from '../../components/ui/Icon/Icon';
 import PetCarousel from '../../components/ui/PetCarousel/PetCarousel';
 
 import { usePetContext } from '../../shared/hooks/usePetContext';
+import { getPetDraftKey, DRAFT_KEYS, DRAFT_UPDATED_EVENT } from '../../shared/constants/draftKeys';
 import { faImage, faFilm, faTimes } from '@fortawesome/free-solid-svg-icons';
 
 import clsx from 'clsx';
@@ -23,18 +24,18 @@ const MAX_CAPTION_LENGTH = 2000;
  * - Клик по выбранному питомцу - сброс к null (пользователь)
  */
 export default function CreatePostModal({ isOpen, onClose }) {
-        const { pets, activePet, user } = usePetContext();
-        const fileInputRef = useRef(null);
-
-        const [selectedPetId, setSelectedPetId] = useState(activePet?.id ?? null);
+    const { pets, activePet, user } = usePetContext();
+    const fileInputRef = useRef(null);
+    
+    const [selectedPetId, setSelectedPetId] = useState(activePet?.id ?? null);
     const [caption, setCaption] = useState('');
     const [media, setMedia] = useState([]);
     const [isDragging, setIsDragging] = useState(false);
 
     // Ключ для черновика
     const draftKey = selectedPetId === null
-        ? 'draft:post:user'
-        : `draft:post:pet:${selectedPetId}`;
+        ? DRAFT_KEYS.USER_POST
+        : getPetDraftKey(selectedPetId);
 
     // Загрузка черновика
     useEffect(() => {
@@ -57,18 +58,36 @@ export default function CreatePostModal({ isOpen, onClose }) {
 
     // Сохранение черновика
     useEffect(() => {
-        if (!isOpen) return;
+    if (!isOpen) return;
 
-        const draft = { caption, media };
-        try {
-            localStorage.setItem(draftKey, JSON.stringify(draft));
-        } catch (err) {
-            console.warn('Не удалось сохранить черновик:', err);
+        const hasContent = caption.trim().length > 0 || media.length > 0;
+        if (hasContent) {
+            // Сохраняем только если есть реальный контент
+            try {
+                localStorage.setItem(draftKey, JSON.stringify({ caption, media }));
+            } catch (err) {
+                console.warn('Не удалось сохранить черновик:', err);
+            }
+        } else {
+            // Удаляем ключ, если черновик пустой
+            localStorage.removeItem(draftKey);
         }
+
+        // Уведомляем ВСЕ слушатели (в т.ч. в текущей вкладке)
+        window.dispatchEvent(
+            new CustomEvent(DRAFT_UPDATED_EVENT, {
+                detail: { key: draftKey, hasDraft: hasContent },
+            })
+        );
     }, [caption, media, draftKey, isOpen]);
 
     const clearDraft = () => {
         localStorage.removeItem(draftKey);
+        window.dispatchEvent(
+            new CustomEvent(DRAFT_UPDATED_EVENT, {
+                detail: { key: draftKey, hasDraft: false },
+            })
+        );
     };
 
     // Toggle: клик по выбранному питомцу - сброс к пользователю
