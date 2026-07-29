@@ -1,5 +1,6 @@
 [
     {
+        "id": "prod_001",
         "productImgPath": "/images/store_test/dog_food.png",
         "productDescription" : {
             "price": 3129,
@@ -9,6 +10,7 @@
         }
     },
     {
+        "id": "prod_002",
         "productImgPath": "/images/store_test/sweater.png",
         "productDescription" : {
             "price": 999,
@@ -18,6 +20,7 @@
         }
     },
     {
+        "id": "prod_003",
         "productImgPath": "/images/store_test/aquarium.png",
         "productDescription" : {
             "price": 2574,
@@ -27,6 +30,7 @@
         }
     },
     {
+        "id": "prod_004",
         "productImgPath": "/images/store_test/drinking_bowl.png",
         "productDescription" : {
             "price": 159,
@@ -36,6 +40,7 @@
         }
     },
     {
+        "id": "prod_005",
         "productImgPath": "/images/store_test/bird_food.png",
         "productDescription" : {
             "price": 169,
