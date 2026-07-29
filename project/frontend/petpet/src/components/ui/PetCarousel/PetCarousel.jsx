@@ -6,7 +6,9 @@ import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons
 import classes from './styles/PetCarousel.module.css';
 import clsx from 'clsx';
 
-import { useRef, useState, useEffect, useCallback } from 'react';
+import { useRef, useState, useEffect, useCallback, useMemo } from 'react';
+
+import { useDraftStatus } from '../../../shared/hooks/useDraftStatus';
 
 const VISIBLE_COUNT = 3;
 
@@ -36,6 +38,12 @@ export default function PetCarousel({ pets, selectedPetId, onSelect }) {
     useEffect(() => {
         currentIndexRef.current = currentIndex;
     }, [currentIndex]);
+
+    // Мемоизируем petIds, чтобы useDraftStatus не пересчитывался при каждом рендере
+    const petIds = useMemo(() => pets.map((p) => p.id), [pets]);
+    
+    // Проверяем наличие черновиков — один раз при монтировании + подписка на storage event
+    const draftPetIds = useDraftStatus(petIds);
 
     // Расширенный массив вынесен в useMemo, чтобы не пересоздавать при каждом рендере
     const extendedPets = [
@@ -84,6 +92,7 @@ export default function PetCarousel({ pets, selectedPetId, onSelect }) {
                         key={pet.id}
                         author={pet}
                         isSelected={pet.id === selectedPetId}
+                        hasDraft={draftPetIds.has(pet.id)}
                         onClick={() => onSelect(pet.id)}
                     />
                 ))}
@@ -141,6 +150,7 @@ export default function PetCarousel({ pets, selectedPetId, onSelect }) {
                             key={`${pet.id}-${index}`}
                             author={pet}
                             isSelected={pet.id === selectedPetId && index === currentIndex}
+                            hasDraft={draftPetIds.has(pet.id)}
                             onClick={() => onSelect(pet.id)}
                         />
                     ))}
