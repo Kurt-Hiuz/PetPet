@@ -15,6 +15,7 @@ If you are developing a production application, we recommend using TypeScript wi
 petpet
 ├─ eslint.config.js
 ├─ index.html
+├─ jsconfig.json
 ├─ package-lock.json
 ├─ package.json
 ├─ public
@@ -291,7 +292,10 @@ petpet
 │  │  │  │  └─ petApi.js
 │  │  │  └─ post
 │  │  │     └─ postApi.js
+│  │  ├─ constants
+│  │  │  └─ draftKeys.js
 │  │  ├─ hooks
+│  │  │  ├─ useDraftStatus.js
 │  │  │  └─ usePetContext.js
 │  │  └─ store
 │  │     └─ petStore.js
