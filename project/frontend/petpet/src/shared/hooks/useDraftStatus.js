@@ -1,4 +1,3 @@
-// src/shared/hooks/useDraftStatus.js
 import { useState, useEffect } from 'react';
 import { getPetDraftKey, DRAFT_UPDATED_EVENT } from '../constants/draftKeys';
 
@@ -7,15 +6,15 @@ import { getPetDraftKey, DRAFT_UPDATED_EVENT } from '../constants/draftKeys';
  * Игнорирует пустые черновики ({caption: '', media: []}).
  */
 function hasDraftContent(raw) {
-  try {
-    const draft = JSON.parse(raw);
-    return (
-      (typeof draft.caption === 'string' && draft.caption.trim().length > 0) ||
-      (Array.isArray(draft.media) && draft.media.length > 0)
-    );
-  } catch {
-    return false;
-  }
+    try {
+        const draft = JSON.parse(raw);
+        return (
+            (typeof draft.caption === 'string' && draft.caption.trim().length > 0) ||
+            (Array.isArray(draft.media) && draft.media.length > 0)
+        );
+    } catch {
+        return false;
+    }
 }
 
 /**
@@ -24,8 +23,8 @@ function hasDraftContent(raw) {
  * @returns {string|null}
  */
 function extractPetId(key) {
-  if (!key?.startsWith('draft:post:pet:')) return null;
-  return key.replace('draft:post:pet:', '');
+    if (!key?.startsWith('draft:post:pet:')) return null;
+    return key.replace('draft:post:pet:', '');
 }
 
 /**
