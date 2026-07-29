@@ -13,6 +13,7 @@ export default function Button({
     disabled = false,
     loading = false,
     classList = "",
+    ariaLabel,
     ...rest
 }){
     
@@ -28,10 +29,10 @@ export default function Button({
             )}
             onClick={OnClick}
             disabled={disabled || loading}
-            {...rest}
-
+            aria-label={ariaLabel || (typeof children === 'string' ? children : undefined)}
             aria-busy={loading} // Для скринридеров: кнопка занята
-            aria-label={loading ? 'Загрузка...' : undefined}
+            
+            {...rest}
         >
             {icon && (!loading || disabled) && (
                 <span className={classes.icon}>{icon}</span>
