@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import classes from './styles/ScrollToTop.module.css';
-import Icon from '../Icon/Icon';
+import Icon from '@ui/Icon/Icon';
 import { faArrowUp } from '@fortawesome/free-solid-svg-icons';
 
 export default function ScrollToTop({ scrollContainerRef, threshold = 300 }) {

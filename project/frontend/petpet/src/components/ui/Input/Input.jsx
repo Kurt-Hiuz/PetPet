@@ -1,6 +1,6 @@
 import classes from './styles/Input.module.css';
 
-import Icon from '../Icon/Icon';
+import Icon from '@ui/Icon/Icon';
 
 export default function Input({
     type = "text",

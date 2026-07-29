@@ -1,6 +1,6 @@
 import classes from './styles/PostFeed.module.css';
 
-import Post from "../Post/Post";
+import Post from '@ui/Post/Post';
 
 // ## Используется в PostFeedContainer
 export default function PostFeed({posts}){

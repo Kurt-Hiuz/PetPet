@@ -1,6 +1,6 @@
 import classes from './styles/SideBar.module.css'
 
-import { routesConfig } from '../../../config/routesConfig';
+import { routesConfig } from '@config/routesConfig';
 
 import { Link } from 'react-router-dom';
 

@@ -1,17 +1,19 @@
-import Modal from '../../components/ui/ModalTrigger/Modal/Modal';
-import Button from '../../components/ui/Button/Button';
-import Avatar from '../../components/ui/Avatar/Avatar';
-import Icon from '../../components/ui/Icon/Icon';
-import PetCarousel from '../../components/ui/PetCarousel/PetCarousel';
+import Modal from '@ui/ModalTrigger/Modal/Modal';
+import Button from '@ui/Button/Button';
+import Avatar from '@ui/Avatar/Avatar';
+import Icon from '@ui/Icon/Icon';
+import PetCarousel from '@ui/PetCarousel/PetCarousel';
 
-import { usePetContext } from '../../shared/hooks/usePetContext';
-import { getPetDraftKey, DRAFT_KEYS, DRAFT_UPDATED_EVENT } from '../../shared/constants/draftKeys';
+import { usePetContext } from '@shared/hooks/usePetContext';
+import { getPetDraftKey, DRAFT_KEYS, DRAFT_UPDATED_EVENT } from '@shared/constants/draftKeys';
 import { faImage, faFilm, faTimes } from '@fortawesome/free-solid-svg-icons';
 
 import clsx from 'clsx';
 import classes from './styles/CreatePostModal.module.css';
 
 import { useState, useEffect, useRef } from 'react';
+
+// TODO: декомпозировать компонент. Слишком много ответственности в одном файле
 
 const MAX_CAPTION_LENGTH = 2000;
 

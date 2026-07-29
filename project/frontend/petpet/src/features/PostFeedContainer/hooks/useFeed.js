@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { getFeed } from '../../../shared/api/post/postApi';
+import { getFeed } from '@shared/api/post/postApi';
 
 /**
  * Хук для загрузки ленты постов

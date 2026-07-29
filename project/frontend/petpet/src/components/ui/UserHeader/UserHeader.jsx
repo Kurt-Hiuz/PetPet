@@ -1,12 +1,12 @@
 import classes from './styles/UserHeader.module.css';
 
-import Avatar from '../Avatar/Avatar';
-import Button from '../Button/Button';
-import Icon from '../Icon/Icon';
+import Avatar from '@ui/Avatar/Avatar';
+import Button from '@ui/Button/Button';
+import Icon from '@ui/Icon/Icon';
 
-import PetSwitcher from '../PetSwitcher/PetSwitcher';
+import PetSwitcher from '@ui/PetSwitcher/PetSwitcher';
 
-import { IMAGES, DETAILS } from '../../../config/assetsConfig';
+import { IMAGES, DETAILS } from '@config/assetsConfig';
 
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 

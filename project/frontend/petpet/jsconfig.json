@@ -1,0 +1,26 @@
+{
+    "compilerOptions": {
+        "ignoreDeprecations": "6.0",
+        "baseUrl": ".",
+        "moduleResolution": "bundler",
+        "allowJs": true,
+        "checkJs": false,
+        "jsx": "react-jsx",
+        "paths": {
+            "@assets/*": ["src/assets/*"],
+            "@pages/*": ["src/components/pages/*"],
+            "@screens/*": ["src/components/screens/*"],
+            "@template/*": ["src/components/template/*"],
+            "@ui/*": ["src/components/ui/*"],
+            "@config/*": ["src/config/*"],
+            "@data/*": ["src/data/*"],
+            "@features/*": ["src/features/*"],
+            "@routes/*": ["src/routes/*"],
+            "@shared/*": ["src/shared/*"],
+            "@api/": ["src/shared/api/*"],
+            "@hooks/": ["src/shared/hooks/*"],
+            "@utils/*": ["src/utils/*"]
+        }
+    },
+    "exclude": ["node_modules", "dist"]
+}

@@ -1,6 +1,6 @@
 // import classes from './styles/News.module.css';
 
-import PostFeedContainer from '../../../features/PostFeedContainer/PostFeedContainer';
+import PostFeedContainer from '@features/PostFeedContainer/PostFeedContainer';
 
 export default function News(){
     return(

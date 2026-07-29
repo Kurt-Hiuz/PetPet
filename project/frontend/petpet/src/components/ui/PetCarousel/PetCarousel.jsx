@@ -1,5 +1,5 @@
-import Icon from '../Icon/Icon';
-import AuthorCard from '../AuthorCard/AuthorCard';
+import Icon from '@ui/Icon/Icon';
+import AuthorCard from '@ui/AuthorCard/AuthorCard';
 
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
@@ -8,7 +8,7 @@ import clsx from 'clsx';
 
 import { useRef, useState, useEffect, useCallback, useMemo } from 'react';
 
-import { useDraftStatus } from '../../../shared/hooks/useDraftStatus';
+import { useDraftStatus } from '@shared/hooks/useDraftStatus';
 
 const VISIBLE_COUNT = 3;
 

@@ -1,8 +1,8 @@
 import { useState } from 'react';
 
-import Button from '../Button/Button';
+import Button from '@ui/Button/Button';
 
-import { THEMES, THEME_CYCLE } from '../../../config/themes';
+import { THEMES, THEME_CYCLE } from '@config/themes';
 
 export const ThemeSwitcher = () => {
     const [theme, setTheme] = useState(() => {

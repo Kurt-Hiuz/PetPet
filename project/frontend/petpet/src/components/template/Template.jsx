@@ -1,11 +1,11 @@
 import classes from './styles/Template.module.css'
 
-import { PetContextProvider } from '../../features/petContext/PetContextProvider';
+import { PetContextProvider } from '@features/petContext/PetContextProvider';
 
 import Header from './Header/Header'
 import SideMenu from './SideBar/SideBar';
 import MainContent from './MainContent/MainContent';
-import ScrollToTop from '../ui/ScrollToTop/ScrollToTop';
+import ScrollToTop from '@ui/ScrollToTop/ScrollToTop';
 
 import { useRef } from 'react';
 

@@ -1,6 +1,6 @@
 import classes from './styles/ErrorScreen.module.css'
 
-import errors from '../../../data/http_codes.json' with { type: "json" };
+import errors from '@data/http_codes.json' with { type: "json" };
 
 import tiger_paws from './assets/paws_svg/tiger.svg';
 import tiger_paws_2 from './assets/paws_svg/tiger_2.svg';

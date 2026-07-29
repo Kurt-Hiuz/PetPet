@@ -1,4 +1,4 @@
-import FunnyFace from '../../../assets/components/logo/FunnyFace'
+import FunnyFace from '@assets/components/logo/FunnyFace'
 
 import classes from './styles/SignIn.module.css'
 

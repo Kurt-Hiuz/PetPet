@@ -1,12 +1,12 @@
 import classes from './styles/Profile.module.css';
 
-import UserHeader from '../../ui/UserHeader/UserHeader';
-import Button from '../../ui/Button/Button';
-import PostFeed from '../../ui/PostFeed/PostFeed';
-import Icon from '../../ui/Icon/Icon';
+import UserHeader from '@ui/UserHeader/UserHeader';
+import Button from '@ui/Button/Button';
+import PostFeed from '@ui/PostFeed/PostFeed';
+import Icon from '@ui/Icon/Icon';
 
-import ModalTrigger from '../../ui/ModalTrigger/ModalTrigger';
-import CreatePostModal from '../../../features/CreatePostModal/CreatePostModal';
+import ModalTrigger from '@ui/ModalTrigger/ModalTrigger';
+import CreatePostModal from '@features/CreatePostModal/CreatePostModal';
 
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 

@@ -1,6 +1,6 @@
 import classes from './styles/Reaction.module.css';
 
-import { IMAGES } from '../../../config/assetsConfig';
+import { IMAGES } from '@config/assetsConfig';
 
 export default function Reaction({reactionImg = IMAGES.NO_IMG, reactionCount = 0}){
     return(

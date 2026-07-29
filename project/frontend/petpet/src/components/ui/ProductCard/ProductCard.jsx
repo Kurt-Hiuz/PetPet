@@ -1,33 +1,25 @@
 import classes from './styles/ProductCard.module.css';
 
-import { IMAGES, DETAILS } from '../../../config/assetsConfig';
+import { memo } from 'react';
 
-import ProductCardImage from './ProductCardImage/ProductCardImage';
-import ProductCardDescription from './ProductCardDescription/ProductCardDescription';
+import ProductCardImage from '@ui/ProductCardGrid/ProductCardGrid';
+import ProductCardDescription from '@ui/ProductCardDescription/ProductCardDescription';
 
-import Button from '../Button/Button';
-import Icon from '../Icon/Icon';
+import Button from '@ui/Button/Button';
+import Icon from '@ui/Icon/Icon';
 
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
 
-export default function ProductCard({data = {}}){
-    const product = {
-        "productImgPath": data.productImgPath ?? IMAGES.NO_IMG,
-        "productDescription" : {
-            "price": data.productDescription?.price ?? DETAILS.NO_PRICE,
-            "title": data.productDescription?.title ?? DETAILS.NO_DESCRIPTION,
-            "stars": data.productDescription?.stars ?? DETAILS.NO_STARS,
-            "reviewCount": data.productDescription?.reviewCount ?? DETAILS.NO_REVIEW
-        }
-    }
-    
+function ProductCard({data}){
     return(
         <article className={classes.product_card}>
-            <ProductCardImage imagePath={product.productImgPath} />
-            <ProductCardDescription data={product.productDescription} />
+            <ProductCardImage imagePath={data.productImgPath} />
+            <ProductCardDescription data={data.productDescription} />
             <Button variant='secondary' fullWidth={true}>
                 Заказать <Icon icon={faCartShopping}/>
             </Button>
         </article>
     );
 }
+
+export default memo(ProductCard);

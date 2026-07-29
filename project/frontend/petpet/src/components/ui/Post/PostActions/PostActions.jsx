@@ -1,12 +1,12 @@
 import classes from './styles/PostActions.module.css';
 
-import { REACTIONS_CONFIG } from '../../../../config/reactionsConfig';
+import { REACTIONS_CONFIG } from '@config/reactionsConfig';
 
-import Icon from '../../Icon/Icon';
+import Icon from '@ui/Icon/Icon';
 import { faComment, faShare } from '@fortawesome/free-solid-svg-icons';
 
-import { pluralizeComments } from '../../../../utils/pluralize';
-import { formatCount } from '../../../../utils/formatCount';
+import { pluralizeComments } from '@utils/pluralize';
+import { formatCount } from '@utils/formatCount';
 
 // export default function PostActions({ stats, postId }) { // - заготовка под посты с id
 export default function PostActions({ stats }) {

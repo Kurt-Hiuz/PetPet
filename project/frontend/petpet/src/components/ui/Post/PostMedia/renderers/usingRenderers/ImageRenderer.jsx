@@ -1,4 +1,4 @@
-import { IMAGES } from "../../../../../../config/assetsConfig";
+import { IMAGES } from "@config/assetsConfig";
 
 export default function ImageRenderer({ url, alt, className }) {
     return (

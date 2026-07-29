@@ -1,4 +1,4 @@
-import LogoQuokka from '../../../assets/components/logo/LogoQuokka'
+import LogoQuokka from '@assets/components/logo/LogoQuokka'
 
 import classes from './styles/LoadingScreen.module.css'
 

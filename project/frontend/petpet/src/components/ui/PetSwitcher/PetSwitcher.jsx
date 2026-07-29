@@ -1,9 +1,9 @@
 import { useRef, useState, useEffect, useCallback } from 'react';
 import classes from './styles/PetSwitcher.module.css';
 import clsx from 'clsx';
-import Avatar from '../Avatar/Avatar';
-import Button from '../Button/Button';
-import Icon from '../Icon/Icon';
+import Avatar from '@ui/Avatar/Avatar';
+import Button from '@ui/Button/Button'; // TODO: доделать
+import Icon from '@ui/Icon/Icon';
 import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
 
 /**

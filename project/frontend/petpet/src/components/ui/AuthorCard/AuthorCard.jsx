@@ -1,5 +1,5 @@
-import Avatar from '../Avatar/Avatar';
-import Icon from '../Icon/Icon';
+import Avatar from '@ui/Avatar/Avatar';
+import Icon from '@ui/Icon/Icon';
 
 import { faPencil } from '@fortawesome/free-solid-svg-icons';
 

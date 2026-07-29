@@ -1,6 +1,8 @@
 import classes from './styles/ProductCardGrid.module.css';
 
-import ProductCard from '../ProductCard/ProductCard';
+import ProductCard from '@ui/ProductCard/ProductCard';
+
+import { IMAGES, DETAILS } from '@config/assetsConfig';
 
 // ! TODO: разбить этот компонент на service и use составляющие
 
@@ -15,10 +17,20 @@ export default function ProductCardGrid({isLoading = true, products}){
 
     return(
         <div className={classes.product_grid}>
-            {products.map((product) => (
-                // TODO Если одинаково не будет пути до карточки, то произойдет сбой. Исправить
-                <ProductCard key={product.productImgPath} data={product} />
-            ))}
+            {products.map((product) => {
+                const normalizedProduct = {
+                    id: product.id,
+                    productImgPath: product.productImgPath ?? IMAGES.NO_IMG,
+                    productDescription: {
+                        price: product.productDescription?.price ?? DETAILS.NO_PRICE,
+                        title: product.productDescription?.title ?? DETAILS.NO_DESCRIPTION,
+                        stars: product.productDescription?.stars ?? DETAILS.NO_STARS,
+                        reviewCount: product.productDescription?.reviewCount ?? DETAILS.NO_REVIEW
+                    }
+                };
+
+                return <ProductCard key={product.id} data={normalizedProduct} />
+            })}
         </div>
     );
 }
