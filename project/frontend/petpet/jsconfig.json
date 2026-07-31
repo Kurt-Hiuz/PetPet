@@ -17,8 +17,8 @@
             "@features/*": ["src/features/*"],
             "@routes/*": ["src/routes/*"],
             "@shared/*": ["src/shared/*"],
-            "@api/": ["src/shared/api/*"],
-            "@hooks/": ["src/shared/hooks/*"],
+            "@api/*": ["src/shared/api/*"],
+            "@hooks/*": ["src/shared/hooks/*"],
             "@utils/*": ["src/utils/*"]
         }
     },
