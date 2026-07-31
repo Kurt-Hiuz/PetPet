@@ -2,8 +2,8 @@ import classes from './styles/ProductCard.module.css';
 
 import { memo } from 'react';
 
-import ProductCardImage from '@ui/ProductCardGrid/ProductCardGrid';
-import ProductCardDescription from '@ui/ProductCardDescription/ProductCardDescription';
+import ProductCardImage from '@ui/ProductCard/ProductCardImage/ProductCardImage';
+import ProductCardDescription from '@ui/ProductCard/ProductCardDescription/ProductCardDescription';
 
 import Button from '@ui/Button/Button';
 import Icon from '@ui/Icon/Icon';
