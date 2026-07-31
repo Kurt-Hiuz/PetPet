@@ -11,11 +11,8 @@ import { formatCount } from '@utils/formatCount';
 // export default function PostActions({ stats, postId }) { // - заготовка под посты с id
 export default function PostActions({ stats }) {
     const rawComments = stats.comments || 0;
-    const displayComments = formatCount(rawComments);
-    // Для <1000 используем точное склонение, для >=1000 всегда "комментариев"
-    const commentsLabel = rawComments < 1000 
-        ? pluralizeComments(rawComments) 
-        : `${displayComments} комментариев`;
+    
+    const commentsLabel = `${formatCount(rawComments)} ${pluralizeComments(rawComments)}`;
 
     return (
         <div className={classes.actions}>
