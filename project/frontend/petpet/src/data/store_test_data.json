@@ -2,6 +2,9 @@
     {
         "id": "prod_001",
         "productImgPath": "/images/store_test/dog_food.png",
+        "category": "food",
+        "petType": ["dog"],
+        "inStock": true,
         "productDescription" : {
             "price": 3129,
             "title": "Ownat Adult Grain Free Сухой корму беззерновой для взрослых собак, с ягненком, 3 кг",
@@ -12,6 +15,9 @@
     {
         "id": "prod_002",
         "productImgPath": "/images/store_test/sweater.png",
+        "category": "clothes",
+        "petType": ["dog", "cat"],
+        "inStock": true,
         "productDescription" : {
             "price": 999,
             "title": "RURRI Свитер из шенилла для кошек и собак, XS, персиковый",
@@ -22,6 +28,9 @@
     {
         "id": "prod_003",
         "productImgPath": "/images/store_test/aquarium.png",
+        "category": "accessories",
+        "petType": ["fish"],
+        "inStock": true,
         "productDescription" : {
             "price": 2574,
             "title": "Naribo Аквариум-шар пластиковый с оборудованием для рыбки петушка A-100, 4 л.",
@@ -32,6 +41,9 @@
     {
         "id": "prod_004",
         "productImgPath": "/images/store_test/drinking_bowl.png",
+        "category": "accessories",
+        "petType": ["bird"],
+        "inStock": true,
         "productDescription" : {
             "price": 159,
             "title": "Triol Поилка для птиц 200 мл",
@@ -42,6 +54,9 @@
     {
         "id": "prod_005",
         "productImgPath": "/images/store_test/bird_food.png",
+        "category": "food",
+        "petType": ["bird"],
+        "inStock": true,
         "productDescription" : {
             "price": 169,
             "title": "RIO РИО Бисквиты для птиц с лесными ягодами 5х7 г",
