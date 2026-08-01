@@ -1,3 +1,15 @@
+.product_card_link {
+    display: contents; /* Link становится "невидимым" для layout */
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+.product_card_link:focus-visible .product_card {
+    outline: 2px solid var(--color-secondary, #648ccc);
+    outline-offset: 4px;
+}
+
 .product_card {
     display: grid;
     grid-template-rows: auto 1fr auto;
@@ -6,6 +18,7 @@
     background: white;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+    overflow: hidden;
 }
 
 .product_card:hover {
