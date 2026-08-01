@@ -1,6 +1,7 @@
 import classes from './styles/ProductCard.module.css';
 
 import { memo } from 'react';
+import { Link } from 'react-router-dom';
 
 import ProductCardImage from '@ui/ProductCard/ProductCardImage/ProductCardImage';
 import ProductCardDescription from '@ui/ProductCard/ProductCardDescription/ProductCardDescription';
@@ -9,16 +10,22 @@ import Button from '@ui/Button/Button';
 import Icon from '@ui/Icon/Icon';
 
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
+import { normalizeProduct } from '@utils/normalize';
 
 function ProductCard({data}){
+    const product = normalizeProduct(data);
+    if (!product?.id) return null; // ошибки не будет, карточка просто не отрисуется
+
     return(
-        <article className={classes.product_card}>
-            <ProductCardImage imagePath={data.productImgPath} />
-            <ProductCardDescription data={data.productDescription} />
-            <Button variant='secondary' fullWidth={true}>
-                Заказать <Icon icon={faCartShopping}/>
-            </Button>
-        </article>
+        <Link to={`/product/${product.id}`} className={classes.product_card_link}>
+            <article className={classes.product_card}>
+                <ProductCardImage imagePath={product.productImgPath} />
+                <ProductCardDescription data={product.productDescription} />
+                <Button variant='secondary' fullWidth={true}>
+                    Заказать <Icon icon={faCartShopping}/>
+                </Button>
+            </article>
+        </Link>
     );
 }
 
