@@ -1,4 +1,4 @@
-import YMap from "../../components/pages/ymap/YMap"
+import YMap from "@pages/ymap/YMap"
 
 export default {
     path: '/ymap',

@@ -1,4 +1,4 @@
-import Store from "../../components/pages/store/Store";
+import Store from "@pages/store/Store";
 
 export default {
     path: '/store',

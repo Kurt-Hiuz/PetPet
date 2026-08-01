@@ -1,4 +1,4 @@
-import News from "../../components/pages/news/News";
+import News from "@pages/news/News";
 
 export default {
     path: '/news',

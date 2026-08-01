@@ -1,4 +1,4 @@
-import InProcess from "../../components/pages/in_process/InProcess"
+import InProcess from "@pages/in_process/InProcess"
 
 export default [
     {
