@@ -282,6 +282,7 @@ petpet
 │  │  └─ usingRoutes
 │  │     ├─ inProcessRoute.jsx
 │  │     ├─ newsRoute.jsx
+│  │     ├─ productRoute.jsx
 │  │     ├─ profileRoute.jsx
 │  │     ├─ storeRoute.jsx
 │  │     └─ ymapRoute.jsx
@@ -301,6 +302,9 @@ petpet
 │  │     └─ petStore.js
 │  └─ utils
 │     ├─ formatCount.js
+│     ├─ normalize
+│     │  ├─ index.js
+│     │  └─ normalizeProduct.js
 │     └─ pluralize.js
 └─ vite.config.js
 
