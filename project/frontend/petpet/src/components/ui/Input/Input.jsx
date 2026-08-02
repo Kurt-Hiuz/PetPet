@@ -10,6 +10,7 @@ export default function Input({
     label,
     error,
     className = "",
+    ariaLabel,
     ...rest
 }) {
     const inputClass = [
@@ -38,6 +39,7 @@ export default function Input({
                 <input
                     type={type}
                     className={inputClass}
+                    aria-label={ariaLabel}
                     {...rest}
                 />
             </div>
