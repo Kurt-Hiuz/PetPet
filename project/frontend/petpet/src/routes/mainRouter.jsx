@@ -8,7 +8,12 @@ const router = createBrowserRouter([
     {
         element: <App />,
         errorElement: <NotFound />,
-        children: routesConfig.map(({ path, element }) => ({ path, element })),
+        children: [
+            // Все реальные маршруты
+            ...routesConfig.map(({ path, element }) => ({ path, element })),
+            // Ловец 404 - ВСЕГДА последним
+            { path: '*', element: <NotFound /> },
+        ],
     },
 ]);
 
