@@ -19,9 +19,20 @@ function ProductCard({data}){
     return(
         <Link to={`/product/${product.id}`} className={classes.product_card_link}>
             <article className={classes.product_card}>
-                <ProductCardImage imagePath={product.productImgPath} />
+                <ProductCardImage 
+                    imagePath={product.productImgPath} 
+                    productId={product.id}
+                    productData={data}
+                />
+
                 <ProductCardDescription data={product.productDescription} />
-                <Button variant='secondary' fullWidth={true}>
+
+                <Button 
+                    variant='secondary' 
+                    fullWidth={true}
+                    ariaLabel={`Добавить ${data.productDescription.title} в корзину`}
+                    OnClick={(e) => e.preventDefault()}
+                >
                     Заказать <Icon icon={faCartShopping}/>
                 </Button>
             </article>
