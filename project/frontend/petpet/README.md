@@ -63,6 +63,10 @@ petpet
 │  │     └─ variables.css
 │  ├─ components
 │  │  ├─ pages
+│  │  │  ├─ favorites
+│  │  │  │  ├─ Favorites.jsx
+│  │  │  │  └─ styles
+│  │  │  │     └─ Favorites.module.css
 │  │  │  ├─ in_process
 │  │  │  │  ├─ images
 │  │  │  │  │  ├─ bottom_left_paws.svg
@@ -265,6 +269,11 @@ petpet
 │  │  │  ├─ CreatePostModal.jsx
 │  │  │  └─ styles
 │  │  │     └─ CreatePostModal.module.css
+│  │  ├─ Favorites
+│  │  │  └─ FavoriteToggle
+│  │  │     ├─ FavoriteToggle.jsx
+│  │  │     └─ styles
+│  │  │        └─ FavoriteToggle.module.css
 │  │  ├─ petContext
 │  │  │  └─ PetContextProvider.jsx
 │  │  ├─ PostFeedContainer
@@ -280,6 +289,7 @@ petpet
 │  ├─ routes
 │  │  ├─ mainRouter.jsx
 │  │  └─ usingRoutes
+│  │     ├─ favoritesRoute.jsx
 │  │     ├─ inProcessRoute.jsx
 │  │     ├─ newsRoute.jsx
 │  │     ├─ productRoute.jsx
@@ -299,6 +309,7 @@ petpet
 │  │  │  ├─ useDraftStatus.js
 │  │  │  └─ usePetContext.js
 │  │  └─ store
+│  │     ├─ favoritesStore.js
 │  │     └─ petStore.js
 │  └─ utils
 │     ├─ formatCount.js
