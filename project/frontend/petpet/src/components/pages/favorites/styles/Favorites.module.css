@@ -1,0 +1,28 @@
+.favorites_page {
+    padding: 24px;
+}
+
+.favorites_page h1 {
+    margin-bottom: 24px;
+    font-size: 2rem;
+    color: var(--color-text);
+}
+
+.empty_state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
+    text-align: center;
+    color: var(--color-text);
+}
+
+.empty_state h2 {
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+}
+
+.empty_state p {
+    color: #666;
+}

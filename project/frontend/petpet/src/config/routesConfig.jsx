@@ -6,6 +6,7 @@ import ymapRoute from '@routes/usingRoutes/ymapRoute';
 import newsRoute from '@routes/usingRoutes/newsRoute';
 
 import productRoute from '@routes/usingRoutes/productRoute';
+import favoritesRoute from '@routes/usingRoutes/favoritesRoute';
 
 // Порядок в конфиге определяет положение внутри меню
 export const routesConfig = [
@@ -13,6 +14,7 @@ export const routesConfig = [
     storeRoute,
     ymapRoute,
     newsRoute,
-    ...inProcessRoute,
     productRoute,
+    favoritesRoute,
+    ...inProcessRoute,
 ];
