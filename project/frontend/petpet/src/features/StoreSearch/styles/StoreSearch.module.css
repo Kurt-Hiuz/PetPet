@@ -29,3 +29,13 @@
         width: 100%; /* Опционально: растягиваем на всю ширину */
     }
 }
+
+.badge {
+    background: #ff4757;
+    color: white;
+    font-size: 0.75rem;
+    padding: 2px 6px;
+    border-radius: 10px;
+    margin-left: 4px;
+    font-weight: bold;
+}
