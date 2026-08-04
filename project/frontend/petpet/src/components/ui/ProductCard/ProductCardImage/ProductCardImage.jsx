@@ -1,6 +1,6 @@
 import classes from './styles/ProductCardImage.module.css';
 
-import FavoriteToggle from '@features/Favorites/FavoriteToggle/FavoriteToggle';
+import FavoriteToggle from '@features/FavoriteToggle/FavoriteToggle';
 
 /**
  * @param {Object} props
