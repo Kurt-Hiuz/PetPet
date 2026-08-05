@@ -1,8 +1,8 @@
-import InProcess from '@pages/in_process/InProcess'; // Временно используем заглушку
+import Product from "@pages/product/Product";
 
 export default { 
     path: '/product/:id', 
-    element: <InProcess />,
+    element: <Product />,
     name: 'Товар',
     inMenu: false,
     icon: '',
