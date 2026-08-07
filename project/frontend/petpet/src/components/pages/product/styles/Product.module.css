@@ -1,0 +1,32 @@
+.product_page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 24px;
+}
+
+.main_content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    margin-bottom: 48px;
+}
+
+.info_column {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.not_found {
+    text-align: center;
+    padding: 80px 24px;
+    color: var(--color-text);
+}
+
+/* Mobile-first: на мобильных - вертикально */
+@media (max-width: 768px) {
+    .main_content {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+}
