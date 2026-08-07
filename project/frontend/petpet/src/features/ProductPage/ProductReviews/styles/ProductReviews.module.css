@@ -1,0 +1,37 @@
+.reviews_section {
+    margin-top: 48px;
+    padding-top: 32px;
+    border-top: 1px solid #eee;
+}
+
+.reviews_section h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin: 0 0 24px 0;
+}
+
+.empty {
+    text-align: center;
+    padding: 48px 24px;
+    color: #666;
+    font-size: 1rem;
+}
+
+.reviews_list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+@media (max-width: 768px) {
+    .reviews_section {
+        margin-top: 32px;
+        padding-top: 24px;
+    }
+    
+    .reviews_section h2 {
+        font-size: 1.25rem;
+        margin-bottom: 16px;
+    }
+}
