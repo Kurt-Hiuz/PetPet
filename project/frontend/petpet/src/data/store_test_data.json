@@ -5,63 +5,172 @@
         "category": "food",
         "petType": ["dog"],
         "inStock": true,
-        "productDescription" : {
-            "price": 3129,
-            "title": "Ownat Adult Grain Free Сухой корму беззерновой для взрослых собак, с ягненком, 3 кг",
-            "stars": 5,
-            "reviewCount": 5999
-        }
+        "shortDescription": "Полнорационный корм для взрослых собак мелких пород",
+        "fullDescription": "Сбалансированный корм с высоким содержанием мяса. Подходит для собак с чувствительным пищеварением.",
+        "images": [
+            "/images/store_test/dog_food.png",
+            "/images/store_test/dog_food.png"
+        ],
+        "productDescription": {
+            "price": 8500,
+            "title": "Корм для собак Premium",
+            "stars": 4.5,
+            "reviewCount": 121
+        },
+        "details": {
+            "type": "food",
+            "data": {
+                "ingredients": ["мясо 40%", "рис", "овощи", "витамины"],
+                "weight": "12 кг",
+                "manufacturer": "PetFood Inc.",
+                "country": "Россия"
+            }
+        },
+        "variations": [
+            { "id": "v1", "label": "12 кг", "price": 8500, "inStock": true },
+            { "id": "v2", "label": "20 кг", "price": 14000, "inStock": true },
+            { "id": "v3", "label": "30 кг", "price": 18000, "inStock": false }
+        ],
+        "reviews": [
+            {
+                "id": "r1",
+                "author": { "name": "Иван", "avatar": "/images/user_profile_test/user-avatar.jpg" },
+                "rating": 5,
+                "text": "Отличный корм, собака ест с удовольствием!",
+                "date": "2026-07-15"
+            },
+            {
+                "id": "r2",
+                "author": { "name": "Мария", "avatar": "/images/user_profile_test/user-avatar.jpg" },
+                "rating": 4,
+                "text": "Хороший корм, но цена кусается",
+                "date": "2026-07-20"
+            }
+        ]
     },
     {
         "id": "prod_002",
         "productImgPath": "/images/store_test/sweater.png",
-        "category": "clothes",
+        "category": "clothing",
         "petType": ["dog", "cat"],
         "inStock": true,
-        "productDescription" : {
-            "price": 999,
-            "title": "RURRI Свитер из шенилла для кошек и собак, XS, персиковый",
-            "stars": 5,
-            "reviewCount": 107
-        }
+        "shortDescription": "Тёплый свитер для холодных прогулок",
+        "fullDescription": "Выполнен из мягкой шерсти. Не вызывает аллергии.",
+        "images": ["/images/store_test/sweater.png"],
+        "productDescription": {
+            "price": 2500,
+            "title": "Свитер для собаки и кошки",
+            "stars": 4.8,
+            "reviewCount": 45
+        },
+        "details": {
+            "type": "clothing",
+            "data": {
+                "material": "Шерсть 80%, акрил 20%",
+                "sizes": [
+                    { "size": "XS", "chest": 30, "length": 20 },
+                    { "size": "S", "chest": 35, "length": 25 },
+                    { "size": "M", "chest": 40, "length": 30 },
+                    { "size": "L", "chest": 45, "length": 35 }
+                ]
+            }
+        },
+        "variations": [
+            { "id": "v1", "label": "XS", "price": 2500, "inStock": true },
+            { "id": "v2", "label": "S", "price": 2500, "inStock": true },
+            { "id": "v3", "label": "M", "price": 2700, "inStock": true },
+            { "id": "v4", "label": "L", "price": 2900, "inStock": false }
+        ],
+        "reviews": []
     },
     {
         "id": "prod_003",
         "productImgPath": "/images/store_test/aquarium.png",
-        "category": "accessories",
+        "category": "aquarium",
         "petType": ["fish"],
         "inStock": true,
-        "productDescription" : {
-            "price": 2574,
-            "title": "Naribo Аквариум-шар пластиковый с оборудованием для рыбки петушка A-100, 4 л.",
-            "stars": 5,
-            "reviewCount": 444
-        }
+        "shortDescription": "Аквариум на 50 литров с подсветкой",
+        "fullDescription": "Стеклянный аквариум с LED-подсветкой и фильтром.",
+        "images": ["/images/store_test/aquarium.png"],
+        "productDescription": {
+            "price": 8500,
+            "title": "Аквариум 50л",
+            "stars": 4.2,
+            "reviewCount": 12
+        },
+        "details": {
+            "type": "aquarium",
+            "data": {
+                "volume": "50 литров",
+                "dimensions": "60x30x35 см",
+                "material": "Стекло",
+                "includes": ["Фильтр", "LED-подсветка", "Крышка"]
+            }
+        },
+        "variations": [
+            { "id": "v1", "label": "50л", "price": 8500, "inStock": true },
+            { "id": "v2", "label": "100л", "price": 15000, "inStock": true }
+        ],
+        "reviews": []
     },
     {
         "id": "prod_004",
-        "productImgPath": "/images/store_test/drinking_bowl.png",
-        "category": "accessories",
-        "petType": ["bird"],
-        "inStock": true,
-        "productDescription" : {
-            "price": 159,
-            "title": "Triol Поилка для птиц 200 мл",
-            "stars": 4.5,
-            "reviewCount": 27
-        }
-    },
-    {
-        "id": "prod_005",
         "productImgPath": "/images/store_test/bird_food.png",
         "category": "food",
         "petType": ["bird"],
         "inStock": true,
-        "productDescription" : {
-            "price": 169,
-            "title": "RIO РИО Бисквиты для птиц с лесными ягодами 5х7 г",
-            "stars": 4.5,
-            "reviewCount": 23
-        }
+        "shortDescription": "Корм для попугаев с витаминами",
+        "fullDescription": "Смесь зёрен и семян с добавлением витаминов.",
+        "images": ["/images/store_test/bird_food.png"],
+        "productDescription": {
+            "price": 450,
+            "title": "Корм для попугаев",
+            "stars": 4.7,
+            "reviewCount": 89
+        },
+        "details": {
+            "type": "food",
+            "data": {
+                "ingredients": ["Пшеница", "Овёс", "Семена подсолнечника", "Витамины"],
+                "weight": "500 г",
+                "manufacturer": "BirdFood Ltd.",
+                "country": "Германия"
+            }
+        },
+        "variations": [
+            { "id": "v1", "label": "500 г", "price": 450, "inStock": true },
+            { "id": "v2", "label": "1 кг", "price": 800, "inStock": true }
+        ],
+        "reviews": []
+    },
+    {
+        "id": "prod_005",
+        "productImgPath": "/images/store_test/drinking_bowl.png",
+        "category": "food",
+        "petType": ["bird"],
+        "inStock": true,
+        "shortDescription": "Автоматическая поилка с фильтром",
+        "fullDescription": "Поилка с угольным фильтром и насосом. Объём 2 литра.",
+        "images": ["/images/store_test/drinking_bowl.png"],
+        "productDescription": {
+            "price": 1800,
+            "title": "Поилка автоматическая",
+            "stars": 4.6,
+            "reviewCount": 67
+        },
+        "details": {
+            "type": "accessories",
+            "data": {
+                "volume": "2 литра",
+                "material": "Пластик",
+                "power": "USB",
+                "features": ["Угольный фильтр", "Тихий насос", "Индикатор уровня воды"]
+            }
+        },
+        "variations": [
+            { "id": "v1", "label": "Стандарт", "price": 1800, "inStock": true },
+            { "id": "v2", "label": "С доп. фильтром", "price": 2200, "inStock": true }
+        ],
+        "reviews": []
     }
 ]
