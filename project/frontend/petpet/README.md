@@ -84,6 +84,10 @@ petpet
 │  │  │  │  ├─ NotFound.jsx
 │  │  │  │  └─ styles
 │  │  │  │     └─ NotFound.module.css
+│  │  │  ├─ product
+│  │  │  │  ├─ Product.jsx
+│  │  │  │  └─ styles
+│  │  │  │     └─ Product.module.css
 │  │  │  ├─ profile
 │  │  │  │  ├─ Profile.jsx
 │  │  │  │  └─ styles
@@ -269,17 +273,45 @@ petpet
 │  │  │  ├─ CreatePostModal.jsx
 │  │  │  └─ styles
 │  │  │     └─ CreatePostModal.module.css
-│  │  ├─ Favorites
-│  │  │  └─ FavoriteToggle
-│  │  │     ├─ FavoriteToggle.jsx
-│  │  │     └─ styles
-│  │  │        └─ FavoriteToggle.module.css
+│  │  ├─ FavoriteToggle
+│  │  │  ├─ FavoriteToggle.jsx
+│  │  │  └─ styles
+│  │  │     └─ FavoriteToggle.module.css
 │  │  ├─ petContext
 │  │  │  └─ PetContextProvider.jsx
 │  │  ├─ PostFeedContainer
 │  │  │  ├─ hooks
 │  │  │  │  └─ useFeed.js
 │  │  │  └─ PostFeedContainer.jsx
+│  │  ├─ ProductPage
+│  │  │  ├─ ProductDetails
+│  │  │  │  ├─ ProductDetailsRenderer.jsx
+│  │  │  │  ├─ renderers
+│  │  │  │  │  ├─ index.js
+│  │  │  │  │  └─ usingRenderers
+│  │  │  │  │     ├─ FoodDetails.jsx
+│  │  │  │  │     └─ SizeTable.jsx
+│  │  │  │  └─ styles
+│  │  │  │     ├─ FoodDetails.module.css
+│  │  │  │     └─ SizeTable.module.css
+│  │  │  ├─ ProductGallery
+│  │  │  │  ├─ ProductGallery.jsx
+│  │  │  │  └─ styles
+│  │  │  │     └─ ProductGallery.module.css
+│  │  │  ├─ ProductInfo
+│  │  │  │  ├─ ProductInfo.jsx
+│  │  │  │  └─ styles
+│  │  │  │     └─ ProductInfo.module.css
+│  │  │  ├─ ProductReviews
+│  │  │  │  ├─ ProductReviews.jsx
+│  │  │  │  ├─ ReviewItem.jsx
+│  │  │  │  └─ styles
+│  │  │  │     ├─ ProductReviews.module.css
+│  │  │  │     └─ ReviewItem.module.css
+│  │  │  └─ ProductVariations
+│  │  │     ├─ ProductVariations.jsx
+│  │  │     └─ styles
+│  │  │        └─ ProductVariations.module.css
 │  │  └─ StoreSearch
 │  │     ├─ StoreSearch.jsx
 │  │     └─ styles
@@ -310,7 +342,8 @@ petpet
 │  │  │  └─ usePetContext.js
 │  │  └─ store
 │  │     ├─ favoritesStore.js
-│  │     └─ petStore.js
+│  │     ├─ petStore.js
+│  │     └─ productVariationsStore.js
 │  └─ utils
 │     ├─ formatCount.js
 │     ├─ normalize
