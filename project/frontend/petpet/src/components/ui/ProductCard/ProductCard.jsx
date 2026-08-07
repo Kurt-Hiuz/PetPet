@@ -14,7 +14,7 @@ import { normalizeProduct } from '@utils/normalize';
 
 function ProductCard({data}){
     const product = normalizeProduct(data);
-    if (!product?.id) return null; // ошибки не будет, карточка просто не отрисуется
+    if (!product) return null;
 
     return(
         <Link to={`/product/${product.id}`} className={classes.product_card_link}>
@@ -22,7 +22,7 @@ function ProductCard({data}){
                 <ProductCardImage 
                     imagePath={product.productImgPath} 
                     productId={product.id}
-                    productData={data}
+                    productData={product}
                 />
 
                 <ProductCardDescription data={product.productDescription} />
