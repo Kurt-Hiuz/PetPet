@@ -4,6 +4,8 @@ import { routesConfig } from '@config/routesConfig';
 
 import { Link } from 'react-router-dom';
 
+import Icon from '@ui/Icon/Icon';
+
 export default function SideMenu(){
     const menu_items = routesConfig.filter(item => item.inMenu);
 
@@ -16,8 +18,7 @@ export default function SideMenu(){
                         className={classes.nav_li} 
                         key={menu_item.path}
                     >
-                        {/* <Icon icon={menu_item.icon} /> */}
-                        {menu_item.name}
+                        <Icon icon={menu_item.icon} /> {menu_item.name}
                     </Link>
                 ))}
             </div>
