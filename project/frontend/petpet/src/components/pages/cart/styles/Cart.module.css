@@ -1,0 +1,172 @@
+.cart_page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 24px;
+}
+
+/* Шапка с заголовком и кнопкой очистки */
+.header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+}
+
+.header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-text);
+    margin: 0;
+}
+
+.count {
+    font-size: 1rem;
+    color: #666;
+    font-weight: 500;
+}
+
+.clear_btn {
+    margin-left: auto;
+    background: transparent;
+    border: none;
+    color: #999;
+    font-size: 0.875rem;
+    cursor: pointer;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: color 0.2s ease, background 0.2s ease;
+}
+
+.clear_btn:hover {
+    color: #ff4757;
+    background: #ffebee;
+}
+
+.clear_btn:focus-visible {
+    outline: 2px solid var(--color-secondary);
+    outline-offset: 2px;
+}
+
+/* Основной контент: список + сайдбар */
+.content {
+    display: grid;
+    grid-template-columns: 1fr 360px;
+    gap: 32px;
+    align-items: start;
+}
+
+.items_list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Сайдбар с итогом */
+.summary {
+    position: sticky;
+    top: 24px;
+    padding: 24px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.summary_row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1rem;
+    color: var(--color-text);
+}
+
+.total_row {
+    padding-top: 16px;
+    border-top: 1px solid #eee;
+    font-size: 1.125rem;
+    font-weight: 600;
+}
+
+.total_price {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-secondary);
+    font-variant-numeric: tabular-nums;
+}
+
+/* Пустое состояние */
+.empty_state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
+    text-align: center;
+    padding: 48px 24px;
+    gap: 16px;
+}
+
+.empty_state h2 {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin: 0;
+}
+
+.empty_state p {
+    font-size: 1rem;
+    color: #666;
+    margin: 0;
+}
+
+.empty_state a {
+    text-decoration: none;
+    margin-top: 8px;
+}
+
+/* Tablet: убираем sticky, сайдбар под списком */
+@media (max-width: 960px) {
+    .content {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+    
+    .summary {
+        position: static;
+    }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+    .cart_page {
+        padding: 16px;
+    }
+    
+    .header {
+        margin-bottom: 20px;
+    }
+    
+    .header h1 {
+        font-size: 1.5rem;
+    }
+    
+    .summary {
+        padding: 16px;
+    }
+    
+    .total_price {
+        font-size: 1.25rem;
+    }
+    
+    .empty_state {
+        min-height: 300px;
+        padding: 32px 16px;
+    }
+    
+    .empty_state h2 {
+        font-size: 1.5rem;
+    }
+}

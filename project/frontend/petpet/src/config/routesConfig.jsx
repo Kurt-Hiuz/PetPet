@@ -4,6 +4,7 @@ import profileRoute from '@routes/usingRoutes/profileRoute';
 import storeRoute from '@routes/usingRoutes/storeRoute';
 import ymapRoute from '@routes/usingRoutes/ymapRoute';
 import newsRoute from '@routes/usingRoutes/newsRoute';
+import cartRoute from '@routes/usingRoutes/cartRoute';
 
 import productRoute from '@routes/usingRoutes/productRoute';
 import favoritesRoute from '@routes/usingRoutes/favoritesRoute';
@@ -14,6 +15,7 @@ export const routesConfig = [
     storeRoute,
     ymapRoute,
     newsRoute,
+    cartRoute,
     productRoute,
     favoritesRoute,
     ...inProcessRoute,
