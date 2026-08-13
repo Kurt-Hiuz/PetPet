@@ -65,3 +65,15 @@
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
     transition-duration: 0.1s; /* Быстрая обратная связь при клике */
 }
+
+.ghost {
+    background: transparent;
+    color: #666;
+    border: 1px solid transparent;
+}
+
+.ghost:hover:not(:disabled) {
+    background: #f5f5f5;
+    color: #ff4757;
+    border-color: #ffebee;
+}
