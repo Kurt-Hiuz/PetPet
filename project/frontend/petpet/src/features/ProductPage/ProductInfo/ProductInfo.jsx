@@ -1,39 +1,91 @@
+import { Link } from 'react-router-dom';
+
 import classes from './styles/ProductInfo.module.css';
 import clsx from 'clsx';
 
 import Icon from '@ui/Icon/Icon';
 import Button from '@ui/Button/Button';
+import QuantitySelector from '@ui/QuantitySelector/QuantitySelector';
 
-import { faStar, faCartShopping } from '@fortawesome/free-solid-svg-icons';
+import { faStar, faCartShopping, faArrowRight } from '@fortawesome/free-solid-svg-icons';
+
 import { pluralizeReviews } from '@utils/pluralize';
+import { formatNumber } from '@utils/formatNumber';
+
+import { useCartStore } from '@shared/store/cartStore';
+import { useProductVariationsStore } from '@shared/store/productVariationsStore';
 
 /**
+ * Информация о товаре: название, цена, рейтинг, описание, кнопка корзины.
+ * 
  * @param {Object} props
- * @param {string} props.title
- * @param {number} props.price - Цена в рублях. -1 или undefined = не указана
- * @param {number} props.rating - Рейтинг 0-5. -1 или undefined = нет рейтинга
- * @param {number} props.reviewCount - Количество отзывов. -1 или undefined = нет отзывов
- * @param {string} props.shortDescription
- * @param {boolean} props.inStock
+ * @param {Object} props.product - Нормализованный продукт из normalizeProduct()
  */
-export default function ProductInfo({ 
-    title, 
-    price, 
-    rating, 
-    reviewCount, 
-    shortDescription,
-    inStock 
-}) {
-    // Проверяем, что данные валидны (не -1, не undefined, не null)
-    const hasPrice = price != null && price >= 0;
+export default function ProductInfo({ product }) {
+    const {
+        id: productId,
+        productDescription: {
+            title,
+            price: basePrice,
+            stars: rating,
+            reviewCount,
+        },
+        shortDescription,
+        inStock,
+        images,
+        variations = [],
+    } = product;
+    
+    const image = images?.[0];
+    
+    const hasPrice = basePrice != null && basePrice >= 0;
     const hasRating = rating != null && rating >= 0;
     const hasReviews = reviewCount != null && reviewCount >= 0;
+    
+    const selectedVariationId = useProductVariationsStore(
+        state => state.variations[productId]
+    );
+    
+    const currentVariation = variations.find(v => v.id === selectedVariationId)
+        || variations.find(v => v.inStock);
+    
+    const variationId = currentVariation?.id || productId;
+    const variationLabel = currentVariation?.label;
+    const currentPrice = currentVariation?.price ?? basePrice;
+    
+    const cartItems = useCartStore(state => state.items);
+    const cartQuantity = cartItems[`${productId}__${variationId}`]?.quantity || 0;
+    const isInCart = cartQuantity > 0;
+    
+    const updateQuantity = useCartStore(state => state.updateQuantity);
+    const removeItem = useCartStore(state => state.removeItem);
+    
+    const handleAddToCart = () => {
+        if (!productId || !hasPrice) return;
+        useCartStore.getState().addItem({
+            productId,
+            variationId,
+            title,
+            price: currentPrice,
+            image,
+            variationLabel,
+        });
+    };
+    
+    const handleQuantityChange = (newQuantity) => {
+        updateQuantity(productId, variationId, newQuantity);
+    };
+    
+    const handleRemove = () => {
+        removeItem(productId, variationId);
+    };
+
+    if (!product) return null;
     
     return (
         <div className={classes.info}>
             <h1 className={classes.title}>{title}</h1>
             
-            {/* Показываем рейтинг только если он есть */}
             {hasRating && (
                 <div className={classes.rating_row}>
                     <Icon icon={faStar} color="#ffd20a" size="lg" />
@@ -51,9 +103,8 @@ export default function ProductInfo({
             )}
             
             <div className={classes.price_row}>
-                {/* Показываем цену или "Не указана" */}
                 <span className={classes.price}>
-                    {hasPrice ? `${price} ₽` : 'Цена не указана'}
+                    {hasPrice ? `${formatNumber(currentPrice)} ₽` : 'Цена не указана'}
                 </span>
                 <span className={clsx(
                     classes.stock_status,
@@ -63,14 +114,31 @@ export default function ProductInfo({
                 </span>
             </div>
             
-            <Button 
-                variant="primary" 
-                fullWidth
-                disabled={!inStock || !hasPrice}
-                ariaLabel={hasPrice ? `Добавить ${title} в корзину` : 'Товар недоступен'}
-            >
-                В корзину <Icon icon={faCartShopping} />
-            </Button>
+            {isInCart ? (
+                <div className={classes.cart_controls}>
+                    <QuantitySelector
+                        value={cartQuantity}
+                        onChange={handleQuantityChange}
+                        onRemove={handleRemove}
+                        allowZero={true}
+                        size="large"
+                    />
+                    <Link to="/cart" className={classes.cart_link}>
+                        <Icon icon={faArrowRight} size="sm" />
+                        <span>в корзине</span>
+                    </Link>
+                </div>
+            ) : (
+                <Button 
+                    variant="primary" 
+                    fullWidth
+                    disabled={!inStock || !hasPrice}
+                    ariaLabel={`Добавить ${title} в корзину`}
+                    OnClick={handleAddToCart}
+                >
+                    В корзину <Icon icon={faCartShopping} />
+                </Button>
+            )}
         </div>
     );
 }
