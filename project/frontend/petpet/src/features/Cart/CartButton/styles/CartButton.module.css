@@ -1,0 +1,13 @@
+.wrapper {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    overflow: visible;
+}
+
+/* Гарантируем, что бейдж всегда виден поверх кнопки */
+.wrapper > * {
+    position: relative;
+    z-index: 1;
+}

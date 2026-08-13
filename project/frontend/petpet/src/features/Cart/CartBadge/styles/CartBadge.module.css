@@ -1,0 +1,28 @@
+.badge {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    min-width: 18px;
+    height: 18px;
+    padding: 0 5px;
+    background: #ff4757;
+    color: white;
+    font-size: 0.7rem;
+    font-weight: 700;
+    border-radius: 9px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    /* Гарантируем, что бейдж поверх всего */
+    z-index: 10;
+    pointer-events: none; /* Клик проходит сквозь бейдж к кнопке */
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+}
+
+/* Если бейдж содержит "99+" - немного шире */
+.badge:has-text("99+") {
+    padding: 0 4px;
+}

@@ -1,0 +1,87 @@
+.modal_content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-height: 70vh;
+    padding: 24px;
+}
+
+.items_list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    overflow-y: auto;
+    max-height: 450px;
+    padding-right: 8px;
+}
+
+/* Кастомный скроллбар */
+.items_list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.items_list::-webkit-scrollbar-track {
+    background: #f5f5f5;
+    border-radius: 3px;
+}
+
+.items_list::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 3px;
+}
+
+.items_list::-webkit-scrollbar-thumb:hover {
+    background: #999;
+}
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding-top: 20px;
+    border-top: 2px solid #f0f0f0;
+    margin-top: 8px;
+}
+
+.total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.total_label {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--color-text);
+}
+
+.total_price {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-secondary);
+    font-variant-numeric: tabular-nums;
+}
+
+.full_link {
+    text-decoration: none;
+    width: 100%;
+}
+
+.empty {
+    text-align: center;
+    padding: 60px 20px;
+    color: #666;
+}
+
+.empty p {
+    font-size: 1.125rem;
+    margin: 0;
+}
+
+.hint {
+    font-size: 0.875rem;
+    margin-top: 12px;
+    color: #999;
+}
