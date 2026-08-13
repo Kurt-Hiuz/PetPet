@@ -32,6 +32,11 @@
 .large  { width: 720px; }
 .auto   { width: auto; }  /* полностью по содержимому */
 
+.xlarge {
+    width: min(900px, 90vw);
+    max-height: 85vh;
+}
+
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
@@ -53,5 +58,12 @@
         width: 100% !important;
         min-width: 0;
         border-radius: 12px;
+    }
+}
+
+@media (max-width: 768px) {
+    .xlarge {
+        width: 95vw;
+        max-height: 90vh;
     }
 }
