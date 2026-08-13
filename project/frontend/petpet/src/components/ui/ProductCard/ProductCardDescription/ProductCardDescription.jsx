@@ -6,6 +6,7 @@ import { faStar } from '@fortawesome/free-solid-svg-icons';
 
 import { formatCount } from '@utils/formatCount';
 import { pluralizeReviews } from '@utils/pluralize';
+import { formatNumber } from '@utils/formatNumber';
 
 /**
  * Описание товара: цена, название, рейтинг, количество отзывов.
@@ -21,7 +22,7 @@ export default function ProductCardDescription({data}){
     
     return(
         <div className={classes.description}>
-            <p className={classes.price}>{data.price} руб.</p>
+            <p className={classes.price}>{formatNumber(data.price)} руб.</p>
             <h3 className={classes.goods_description}>{data.title}</h3>
             <p className={classes.feedback}>
                 <Icon icon={faStar} color='#ffd20a'/> <span>{data.stars}</span> ({formatCount(data.reviewCount)} {pluralizeReviews(data.reviewCount)})
