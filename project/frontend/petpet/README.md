@@ -63,6 +63,10 @@ petpet
 │  │     └─ variables.css
 │  ├─ components
 │  │  ├─ pages
+│  │  │  ├─ cart
+│  │  │  │  ├─ Cart.jsx
+│  │  │  │  └─ styles
+│  │  │  │     └─ Cart.module.css
 │  │  │  ├─ favorites
 │  │  │  │  ├─ Favorites.jsx
 │  │  │  │  └─ styles
@@ -169,6 +173,14 @@ petpet
 │  │     │  └─ styles
 │  │     │     ├─ Button.module.css
 │  │     │     └─ ButtonsVariants.module.css
+│  │     ├─ CartItem
+│  │     │  ├─ CartItem.jsx
+│  │     │  └─ styles
+│  │     │     └─ CartItem.module.css
+│  │     ├─ CartItemMini
+│  │     │  ├─ CartItemMini.jsx
+│  │     │  └─ styles
+│  │     │     └─ CartItemMini.module.css
 │  │     ├─ Icon
 │  │     │  ├─ Icon.jsx
 │  │     │  └─ styles
@@ -243,6 +255,10 @@ petpet
 │  │     │  ├─ ProductCardGrid.jsx
 │  │     │  └─ styles
 │  │     │     └─ ProductCardGrid.module.css
+│  │     ├─ QuantitySelector
+│  │     │  ├─ QuantitySelector.jsx
+│  │     │  └─ styles
+│  │     │     └─ QuantitySelector.module.css
 │  │     ├─ Reaction
 │  │     │  ├─ Reaction.jsx
 │  │     │  └─ styles
@@ -269,6 +285,19 @@ petpet
 │  │  ├─ post_test_data.json
 │  │  └─ store_test_data.json
 │  ├─ features
+│  │  ├─ Cart
+│  │  │  ├─ CartBadge
+│  │  │  │  ├─ CartBadge.jsx
+│  │  │  │  └─ styles
+│  │  │  │     └─ CartBadge.module.css
+│  │  │  ├─ CartButton
+│  │  │  │  ├─ CartButton.jsx
+│  │  │  │  └─ styles
+│  │  │  │     └─ CartButton.module.css
+│  │  │  └─ CartModal
+│  │  │     ├─ CartModal.jsx
+│  │  │     └─ styles
+│  │  │        └─ CartModal.module.css
 │  │  ├─ CreatePostModal
 │  │  │  ├─ CreatePostModal.jsx
 │  │  │  └─ styles
@@ -321,6 +350,7 @@ petpet
 │  ├─ routes
 │  │  ├─ mainRouter.jsx
 │  │  └─ usingRoutes
+│  │     ├─ cartRoute.jsx
 │  │     ├─ favoritesRoute.jsx
 │  │     ├─ inProcessRoute.jsx
 │  │     ├─ newsRoute.jsx
@@ -339,13 +369,17 @@ petpet
 │  │  │  └─ draftKeys.js
 │  │  ├─ hooks
 │  │  │  ├─ useDraftStatus.js
-│  │  │  └─ usePetContext.js
+│  │  │  ├─ usePetContext.js
+│  │  │  └─ useProductInfo.js
 │  │  └─ store
+│  │     ├─ cartStore.js
 │  │     ├─ favoritesStore.js
 │  │     ├─ petStore.js
 │  │     └─ productVariationsStore.js
 │  └─ utils
+│     ├─ formatBadgeCount.js
 │     ├─ formatCount.js
+│     ├─ formatNumber.js
 │     ├─ normalize
 │     │  ├─ index.js
 │     │  └─ normalizeProduct.js
