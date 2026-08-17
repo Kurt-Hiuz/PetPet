@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 
+import clsx from 'clsx';
 import classes from './styles/QuantitySelector.module.css';
 
 import Icon from '@ui/Icon/Icon';
@@ -18,6 +19,7 @@ import { faPlus, faMinus } from '@fortawesome/free-solid-svg-icons';
  * @param {string} [props.size='medium'] - small | medium | large
  * @param {boolean} [props.allowZero=false] - Разрешить 0 (вызовет onRemove)
  * @param {boolean} [props.disabled=false]
+ * @param {boolean} [props.fullWidth=false]
  */
 export default function QuantitySelector({ 
     value, 
@@ -27,19 +29,20 @@ export default function QuantitySelector({
     max = 99,
     size = 'medium',
     allowZero = false,
-    disabled = false 
+    disabled = false,
+    fullWidth = false,
 }) {
-    // Локальный state для input — синхронизируется с value из пропсов
     const [inputValue, setInputValue] = useState(String(value));
     
-    // Синхронизация с внешним value (если изменился извне)
     useEffect(() => {
         setInputValue(String(value));
     }, [value]);
     
     const effectiveMin = allowZero ? 0 : min;
     
-    const handleDecrement = () => {
+    const handleDecrement = (e) => {
+        e.preventDefault();  // Отменяем переход по ссылке
+        e.stopPropagation(); // Останавливаем всплытие
         const newValue = value - 1;
         if (newValue === 0 && allowZero && onRemove) {
             onRemove();
@@ -48,34 +51,27 @@ export default function QuantitySelector({
         }
     };
     
-    const handleIncrement = () => {
+    const handleIncrement = (e) => {
+        e.preventDefault();
+        e.stopPropagation();
         if (value < max) onChange(value + 1);
     };
     
-    // Обработка ручного ввода
     const handleInputChange = (e) => {
+        e.stopPropagation();
         const raw = e.target.value;
-        
-        // Пустое поле — разрешаем (пользователь ещё печатает)
         if (raw === '') {
             setInputValue('');
             return;
         }
-        
-        // Только цифры
         if (!/^\d+$/.test(raw)) return;
-        
         const num = parseInt(raw, 10);
         if (isNaN(num)) return;
-        
-        // Ограничение сверху
         if (num > max) {
             onChange(max);
             setInputValue(String(max));
             return;
         }
-        
-        // Ноль — удаляем товар (если разрешено)
         if (num === 0) {
             if (allowZero && onRemove) {
                 onRemove();
@@ -85,19 +81,16 @@ export default function QuantitySelector({
             }
             return;
         }
-        
-        // Валидное число — обновляем
         onChange(num);
     };
     
-    // При потере фокуса — валидируем значение
-    const handleBlur = () => {
+    const handleBlur = (e) => {
+        e.stopPropagation();
         if (inputValue === '' || parseInt(inputValue, 10) < effectiveMin) {
             onChange(effectiveMin);
         }
     };
     
-    // При нажатии Enter — применяем и убираем фокус
     const handleKeyDown = (e) => {
         if (e.key === 'Enter') {
             e.target.blur();
@@ -105,7 +98,14 @@ export default function QuantitySelector({
     };
     
     return (
-        <div className={`${classes.selector} ${classes[size]}`}>
+        <div 
+            className={clsx(
+                classes.selector, 
+                classes[size],
+                fullWidth && classes.full_width
+            )}
+            onClick={(e) => e.preventDefault()}
+        >
             <button
                 type="button"
                 className={classes.btn}
@@ -127,6 +127,10 @@ export default function QuantitySelector({
                 onKeyDown={handleKeyDown}
                 disabled={disabled}
                 aria-label="Количество товара"
+                onClick={(e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                }}
             />
             
             <button

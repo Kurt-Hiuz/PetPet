@@ -1,13 +1,13 @@
 .product_card_link {
-    display: contents; /* Link становится "невидимым" для layout */
     text-decoration: none;
     color: inherit;
-    cursor: pointer;
+    display: block;
 }
 
-.product_card_link:focus-visible .product_card {
-    outline: 2px solid var(--color-secondary, #648ccc);
+.product_card_link:focus-visible {
+    outline: 2px solid var(--color-secondary);
     outline-offset: 4px;
+    border-radius: 12px;
 }
 
 .product_card {
@@ -24,4 +24,12 @@
 .product_card:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Фиксированная высота для области действия */
+.action_area {
+    min-height: 48px; /* Высота кнопки Button medium */
+    display: flex;
+    align-items: center;
+    padding: 8px 12px 12px 12px;
 }

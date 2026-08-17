@@ -10,30 +10,20 @@ import QuantitySelector from '@ui/QuantitySelector/QuantitySelector';
 import { faStar, faCartShopping, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 import { pluralizeReviews } from '@utils/pluralize';
+import { getDefaultVariationId } from '@utils/getDefaultVariationId';
 import { formatNumber } from '@utils/formatNumber';
 
 import { useCartStore } from '@shared/store/cartStore';
 import { useProductVariationsStore } from '@shared/store/productVariationsStore';
 
-/**
- * Информация о товаре: название, цена, рейтинг, описание, кнопка корзины.
- * 
- * @param {Object} props
- * @param {Object} props.product - Нормализованный продукт из normalizeProduct()
- */
-export default function ProductInfo({ product }) {
+export default function ProductInfo({ product }) {    
     const {
         id: productId,
-        productDescription: {
-            title,
-            price: basePrice,
-            stars: rating,
-            reviewCount,
-        },
+        productDescription: { title, price: basePrice, stars: rating, reviewCount },
         shortDescription,
         inStock,
         images,
-        variations = [],
+        variations,
     } = product;
     
     const image = images?.[0];
@@ -42,14 +32,16 @@ export default function ProductInfo({ product }) {
     const hasRating = rating != null && rating >= 0;
     const hasReviews = reviewCount != null && reviewCount >= 0;
     
+    const defaultVariationId = getDefaultVariationId(product);
+    
     const selectedVariationId = useProductVariationsStore(
         state => state.variations[productId]
     );
     
-    const currentVariation = variations.find(v => v.id === selectedVariationId)
-        || variations.find(v => v.inStock);
+    // Приоритет: выбранная пользователем -> дефолтная -> productId
+    const variationId = selectedVariationId || defaultVariationId;
     
-    const variationId = currentVariation?.id || productId;
+    const currentVariation = variations.find(v => v.id === variationId);
     const variationLabel = currentVariation?.label;
     const currentPrice = currentVariation?.price ?? basePrice;
     
@@ -59,6 +51,8 @@ export default function ProductInfo({ product }) {
     
     const updateQuantity = useCartStore(state => state.updateQuantity);
     const removeItem = useCartStore(state => state.removeItem);
+
+    if (!product) return null;
     
     const handleAddToCart = () => {
         if (!productId || !hasPrice) return;
@@ -79,8 +73,6 @@ export default function ProductInfo({ product }) {
     const handleRemove = () => {
         removeItem(productId, variationId);
     };
-
-    if (!product) return null;
     
     return (
         <div className={classes.info}>
