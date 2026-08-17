@@ -5,6 +5,8 @@ import Button from '@ui/Button/Button';
 import Icon from '@ui/Icon/Icon';
 
 import PetSwitcher from '@ui/PetSwitcher/PetSwitcher';
+import ModalTrigger from '@ui/ModalTrigger/ModalTrigger';
+import AddPetModal from '@features/AddPetModal/AddPetModal';
 
 import { IMAGES, DETAILS } from '@config/assetsConfig';
 
@@ -35,11 +37,13 @@ export default function UserHeader({userData}) {
                             visibleCount={3} 
                             avatarSize="medium" 
                         />
-                        <Button
-                            className={classes.addButton}
-                            icon={<Icon icon={faPlus} />}
-                            aria-label="Добавить питомца"
-                        />
+                        <ModalTrigger modal={<AddPetModal />}>
+                            <Button
+                                className={classes.addButton}
+                                icon={<Icon icon={faPlus} />}
+                                aria-label="Добавить питомца"
+                            />
+                        </ModalTrigger>
                     </div>
                 </div>
             </div>
